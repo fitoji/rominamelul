@@ -1,16 +1,16 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Heart } from "lucide-react"
+import { Heart } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
 
   const navLinks = [
-    { href: "#inicio", label: "Inicio" },
-    { href: "#sobre-mi", label: "Sobre la Terapia" },
-    { href: "#servicios", label: "Servicios" },
-    { href: "#filosofia", label: "Filosofía" },
-    { href: "#contacto", label: "Contacto" },
+    { href: '#inicio', label: 'Inicio' },
+    { href: '#sobre-mi', label: 'Sobre la Terapia' },
+    { href: '#servicios', label: 'Servicios' },
+    { href: '#filosofia', label: 'Filosofía' },
+    { href: '#contacto', label: 'Contacto' },
   ]
 
   return (
@@ -27,8 +27,12 @@ export function Footer() {
               className="rounded-lg"
             />
             <div>
-              <p className="text-lg font-semibold text-foreground">Romina Melul</p>
-              <p className="text-sm text-muted-foreground">Terapeuta Psicocorporal</p>
+              <p className="text-lg font-semibold text-foreground">
+                Romina Melul
+              </p>
+              <p className="text-sm text-muted-foreground">
+                Terapeuta Psicocorporal
+              </p>
             </div>
           </div>
 
@@ -47,8 +51,10 @@ export function Footer() {
 
           {/* Contact Info */}
           <div className="text-center md:text-right space-y-1">
-            <p className="text-sm text-muted-foreground">rominamelul@gmail.com</p>
-            <p className="text-sm text-muted-foreground">+34 688 807 366</p>
+            <p className="text-sm text-muted-foreground">
+              rominamelul@gmail.com
+            </p>
+            <p className="text-sm text-muted-foreground">(+34) 632 73 61 33</p>
           </div>
         </div>
 
@@ -57,7 +63,8 @@ export function Footer() {
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
             <p>© {currentYear} Romina Melul. Todos los derechos reservados.</p>
             <p className="flex items-center gap-1">
-              Hecho con <Heart className="h-4 w-4 text-accent fill-accent" /> para tu bienestar
+              Hecho con <Heart className="h-4 w-4 text-accent fill-accent" />{' '}
+              para tu bienestar
             </p>
           </div>
         </div>
