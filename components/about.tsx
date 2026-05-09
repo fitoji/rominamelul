@@ -1,19 +1,22 @@
-import Image from "next/image"
+import Image from 'next/image'
 
 export function About() {
   const purposes = [
     {
-      title: "Reconocer",
-      description: "Reconocer y elaborar las trabas psicofísicas que mantienen a la persona aprisionada en conductas repetitivas o mecánicas."
+      title: 'Reconocer',
+      description:
+        'Reconocer y elaborar las trabas psicofísicas que mantienen a la persona aprisionada en conductas repetitivas o mecánicas.',
     },
     {
-      title: "Expresar",
-      description: "Expresar y concienciar los aspectos no conducentes de la personalidad."
+      title: 'Expresar',
+      description:
+        'Expresar y concienciar los aspectos no conducentes de la personalidad.',
     },
     {
-      title: "Conectar",
-      description: "Contactar a la persona con su Yo profundo, desbloqueando su capacidad de armonización en todos los planos de la existencia."
-    }
+      title: 'Conectar',
+      description:
+        'Contactar a la persona con su Yo profundo, desbloqueando su capacidad de armonización en todos los planos de la existencia.',
+    },
   ]
 
   return (
@@ -39,23 +42,28 @@ export function About() {
               alt="Sesión de Terapia Psicocorporal"
               width={600}
               height={450}
-              className="relative rounded-2xl shadow-xl object-cover w-full h-[400px]"
+              className="relative rounded-2xl shadow-xl object-cover w-full h-100"
             />
           </div>
 
           {/* Content */}
           <div className="space-y-8 order-1 lg:order-2">
             <p className="text-lg text-muted-foreground leading-relaxed">
-              La <strong className="text-foreground">Terapia Psicocorporal Integradora (TPI)</strong> vincula 
-              el cuerpo físico (forma, síntomas, desórdenes) con los procesos emocionales, psíquicos y 
-              sensoriales del ser humano.
+              La{' '}
+              <strong className="text-foreground">
+                Terapia Psicocorporal Integradora (TPI)
+              </strong>{' '}
+              vincula el cuerpo físico (forma, síntomas, desórdenes) con los
+              procesos emocionales, psíquicos y sensoriales del ser humano.
             </p>
 
             <div className="space-y-6">
-              <h3 className="text-xl font-semibold text-foreground">Tiene como propósitos:</h3>
+              <h3 className="text-xl font-semibold text-foreground">
+                Tiene como propósitos:
+              </h3>
               <div className="space-y-6">
                 {purposes.map((purpose, index) => (
-                  <div 
+                  <div
                     key={purpose.title}
                     className="flex gap-4 items-start p-4 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors"
                   >
@@ -63,8 +71,12 @@ export function About() {
                       {index + 1}
                     </div>
                     <div>
-                      <h4 className="font-semibold text-foreground mb-1">{purpose.title}</h4>
-                      <p className="text-muted-foreground text-sm leading-relaxed">{purpose.description}</p>
+                      <h4 className="font-semibold text-foreground mb-1">
+                        {purpose.title}
+                      </h4>
+                      <p className="text-muted-foreground text-sm leading-relaxed">
+                        {purpose.description}
+                      </p>
                     </div>
                   </div>
                 ))}

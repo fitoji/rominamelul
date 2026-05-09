@@ -58,7 +58,7 @@ export function Hero() {
           {/* Logo/Image */}
           <div className="flex justify-center lg:justify-end">
             <div className="relative">
-              <div className="absolute inset-0 bg-primary/20 rounded-3xl blur-2xl transform rotate-6" />
+              <div className="absolute inset-0 bg-primary/40 rounded-3xl blur-2xl transform -rotate-3" />
               <Image
                 src="/images/logo.png"
                 alt="Terapia Psicocorporal - Equilibrio y Armonía"

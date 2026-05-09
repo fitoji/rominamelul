@@ -6,11 +6,23 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
-import { Mail, Phone } from 'lucide-react'
+import { Mail, Phone, type LucideIcon } from 'lucide-react'
 import Link from 'next/link'
+import type { ReactNode } from 'react'
+
+type ContactMethod = {
+  icon: LucideIcon | (() => ReactNode)
+  title: string
+  description: string
+  value: string
+  href: string
+  buttonText: string
+  color: 'primary' | 'accent'
+  isCustomIcon?: boolean
+}
 
 export function Contact() {
-  const contactMethods = [
+  const contactMethods: ContactMethod[] = [
     {
       icon: Mail,
       title: 'Email',
@@ -21,13 +33,14 @@ export function Contact() {
       color: 'primary',
     },
     {
-      icon: (
-        <img
-          src="/icons8-whatsapp-100.png"
-          alt="WhatsApp"
-          className="h-16 w-16"
-        />
-      ),
+      icon: () =>
+        (
+          <img
+            src="/icons8-whatsapp-100.png"
+            alt="WhatsApp"
+            className="h-16 w-16"
+          />
+        ) as ReactNode,
       title: 'WhatsApp',
       description: 'Contáctame directamente por WhatsApp',
       value: '(+34) 632 73 61 33',
@@ -59,72 +72,76 @@ export function Contact() {
 
         {/* Contact Cards */}
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {contactMethods.map((method) => (
-            <Card
-              key={method.title}
-              className="border-none shadow-xl hover:shadow-2xl transition-all duration-300 bg-card group"
-            >
-              <CardHeader className="text-center pb-4">
-                <div
-                  className={`w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center transition-transform group-hover:scale-110 ${
-                    method.color === 'primary'
-                      ? 'bg-primary/10'
-                      : 'bg-emerald-500'
-                  }`}
-                >
-                  {method.isCustomIcon ? (
-                    method.icon
-                  ) : (
-                    <method.icon
-                      className={`h-12 w-12 ${
-                        method.color === 'primary'
-                          ? 'text-primary'
-                          : 'text-slate-100'
-                      }`}
-                    />
-                  )}
-                </div>
-                <CardTitle className="text-2xl text-foreground">
-                  {method.title}
-                </CardTitle>
-                <CardDescription className="text-muted-foreground">
-                  {method.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="text-center space-y-4">
-                <p className="text-lg font-medium text-foreground">
-                  {method.value}
-                </p>
-                <Button
-                  asChild
-                  size="lg"
-                  className={`w-full ${
-                    method.color === 'primary'
-                      ? 'bg-primary hover:bg-primary/90 text-primary-foreground'
-                      : 'bg-emerald-500 hover:bg-emerald-600 text-slate-100 '
-                  }`}
-                >
-                  <Link
-                    href={method.href}
-                    target={
-                      method.href.startsWith('http') ? '_blank' : undefined
-                    }
+          {contactMethods.map((method) => {
+            const Icon = method.icon as LucideIcon
+
+            return (
+              <Card
+                key={method.title}
+                className="border-none shadow-xl hover:shadow-2xl transition-all duration-300 bg-card group"
+              >
+                <CardHeader className="text-center pb-4">
+                  <div
+                    className={`w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center transition-transform group-hover:scale-110 ${
+                      method.color === 'primary'
+                        ? 'bg-primary/10'
+                        : 'bg-emerald-500'
+                    }`}
                   >
                     {method.isCustomIcon ? (
-                      <img
-                        src="/icons8-whatsapp-100.png"
-                        alt="WhatsApp"
-                        className="h-12 w-12 mr-2"
-                      />
+                      (method.icon as () => ReactNode)()
                     ) : (
-                      <method.icon className="h-5 w-5 mr-2" />
+                      <Icon
+                        className={`h-12 w-12 ${
+                          method.color === 'primary'
+                            ? 'text-primary'
+                            : 'text-slate-100'
+                        }`}
+                      />
                     )}
-                    {method.buttonText}
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
+                  </div>
+                  <CardTitle className="text-2xl text-foreground">
+                    {method.title}
+                  </CardTitle>
+                  <CardDescription className="text-muted-foreground">
+                    {method.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="text-center space-y-4">
+                  <p className="text-lg font-medium text-foreground">
+                    {method.value}
+                  </p>
+                  <Button
+                    asChild
+                    size="lg"
+                    className={`w-full ${
+                      method.color === 'primary'
+                        ? 'bg-primary hover:bg-primary/90 text-primary-foreground'
+                        : 'bg-emerald-500 hover:bg-emerald-600 text-slate-100 '
+                    }`}
+                  >
+                    <Link
+                      href={method.href}
+                      target={
+                        method.href.startsWith('http') ? '_blank' : undefined
+                      }
+                    >
+                      {method.isCustomIcon ? (
+                        <img
+                          src="/icons8-whatsapp-100.png"
+                          alt="WhatsApp"
+                          className="h-12 w-12 mr-2"
+                        />
+                      ) : (
+                        <Icon className="h-5 w-5 mr-2" />
+                      )}
+                      {method.buttonText}
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            )
+          })}
         </div>
 
         {/* Additional Info */}
