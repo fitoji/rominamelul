@@ -6,7 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
-import { Mail, MessageCircle, Phone } from 'lucide-react'
+import { Mail, Phone } from 'lucide-react'
 import Link from 'next/link'
 
 export function Contact() {
@@ -21,13 +21,20 @@ export function Contact() {
       color: 'primary',
     },
     {
-      icon: MessageCircle,
+      icon: (
+        <img
+          src="/icons8-whatsapp-100.png"
+          alt="WhatsApp"
+          className="h-16 w-16"
+        />
+      ),
       title: 'WhatsApp',
       description: 'Contáctame directamente por WhatsApp',
       value: '(+34) 632 73 61 33',
       href: 'https://wa.me/34632736133?text=Hola%20Romina,%20me%20gustaría%20obtener%20información%20sobre%20la%20Terapia%20Psicocorporal',
       buttonText: 'Enviar WhatsApp',
       color: 'accent',
+      isCustomIcon: true,
     },
   ]
 
@@ -65,13 +72,17 @@ export function Contact() {
                       : 'bg-emerald-500'
                   }`}
                 >
-                  <method.icon
-                    className={`h-10 w-10 ${
-                      method.color === 'primary'
-                        ? 'text-primary'
-                        : 'text-slate-100'
-                    }`}
-                  />
+                  {method.isCustomIcon ? (
+                    method.icon
+                  ) : (
+                    <method.icon
+                      className={`h-12 w-12 ${
+                        method.color === 'primary'
+                          ? 'text-primary'
+                          : 'text-slate-100'
+                      }`}
+                    />
+                  )}
                 </div>
                 <CardTitle className="text-2xl text-foreground">
                   {method.title}
@@ -99,7 +110,15 @@ export function Contact() {
                       method.href.startsWith('http') ? '_blank' : undefined
                     }
                   >
-                    <method.icon className="h-5 w-5 mr-2" />
+                    {method.isCustomIcon ? (
+                      <img
+                        src="/icons8-whatsapp-100.png"
+                        alt="WhatsApp"
+                        className="h-12 w-12 mr-2"
+                      />
+                    ) : (
+                      <method.icon className="h-5 w-5 mr-2" />
+                    )}
                     {method.buttonText}
                   </Link>
                 </Button>
