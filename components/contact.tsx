@@ -6,7 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
-import { Mail, Phone, type LucideIcon } from 'lucide-react'
+import { type LucideIcon } from 'lucide-react'
 import Link from 'next/link'
 import type { ReactNode } from 'react'
 
@@ -24,7 +24,10 @@ type ContactMethod = {
 export function Contact() {
   const contactMethods: ContactMethod[] = [
     {
-      icon: Mail,
+      icon: () =>
+        (
+          <img src="/icons8-mail-100.png" alt="email" className="h-16 w-16" />
+        ) as ReactNode,
       title: 'Email',
       description: 'Escríbeme y te responderé lo antes posible',
       value: 'rominamelul@gmail.com',
@@ -84,7 +87,7 @@ export function Contact() {
                   <div
                     className={`w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center transition-transform group-hover:scale-110 ${
                       method.color === 'primary'
-                        ? 'bg-primary/10'
+                        ? 'bg-primary'
                         : 'bg-emerald-500'
                     }`}
                   >
@@ -147,7 +150,12 @@ export function Contact() {
         {/* Additional Info */}
         <div className="mt-16 text-center">
           <div className="inline-flex items-center gap-2 px-6 py-3 bg-secondary/50 rounded-full">
-            <Phone className="h-5 w-5 text-primary" />
+            {/* <Phone className="h-5 w-5 text-primary" /> */}
+            <img
+              src="/icons8-phone-100.png"
+              alt="WhatsApp"
+              className="h-12 w-12 mr-2"
+            />
             <span className="text-foreground">
               También puedes llamar al <strong>632 73 61 33</strong>
             </span>

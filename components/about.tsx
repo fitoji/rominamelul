@@ -67,7 +67,7 @@ export function About() {
                     key={purpose.title}
                     className="flex gap-4 items-start p-4 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors"
                   >
-                    <div className="flex-shrink-0 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-semibold">
+                    <div className="shrink-0 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-semibold">
                       {index + 1}
                     </div>
                     <div>
