@@ -25,7 +25,7 @@ export function Contact() {
       title: 'WhatsApp',
       description: 'Contáctame directamente por WhatsApp',
       value: '(+34) 632 73 61 33',
-      href: 'https://wa.me/34688807366?text=Hola%20Romina,%20me%20gustaría%20obtener%20información%20sobre%20la%20Terapia%20Psicocorporal',
+      href: 'https://wa.me/34632736133?text=Hola%20Romina,%20me%20gustaría%20obtener%20información%20sobre%20la%20Terapia%20Psicocorporal',
       buttonText: 'Enviar WhatsApp',
       color: 'accent',
     },
