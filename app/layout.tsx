@@ -1,19 +1,19 @@
 import type { Metadata } from 'next'
-import { Cormorant_Garamond, Inter } from 'next/font/google'
+import { Inter, Lora } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { organizationStructuredData, personStructuredData } from '@/lib/seo'
 
-const cormorant = Cormorant_Garamond({ 
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-serif"
-});
+const lora = Lora({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-serif',
+})
 
-const inter = Inter({ 
-  subsets: ["latin"],
-  variable: "--font-sans"
-});
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-sans',
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://rominamelul.com'),
@@ -69,7 +69,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className="bg-background">
-      <body className={`${cormorant.variable} ${inter.variable} font-serif antialiased`}>
+      <body className={`${lora.variable} ${inter.variable} font-serif antialiased`}>
         {children}
         <script
           type="application/ld+json"
