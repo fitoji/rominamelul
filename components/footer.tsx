@@ -62,7 +62,12 @@ export function Footer() {
         <div className="border-t border-border mt-8 pt-8">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
             <p>© {currentYear} Romina Melul. Todos los derechos reservados.</p>
-            <p>Iconos de www.icons8.com</p>
+            <p>
+              Icons by{' '}
+              <Link target="_blank" href="https://icons8.com">
+                Icons8
+              </Link>
+            </p>
             <p className="flex items-center gap-1">
               Hecho con <Heart className="h-4 w-4 text-accent fill-accent" />{' '}
               para tu bienestar

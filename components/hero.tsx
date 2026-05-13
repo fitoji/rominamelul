@@ -58,13 +58,13 @@ export function Hero() {
           {/* Logo/Image */}
           <div className="flex justify-center lg:justify-end">
             <div className="relative">
-              <div className="absolute inset-0 bg-primary/40 rounded-3xl blur-2xl transform -rotate-3" />
+              <div className="absolute inset-0  " />
               <Image
-                src="/images/logo.png"
+                src="/romina-logo2.png"
                 alt="Terapia Psicocorporal - Equilibrio y Armonía"
                 width={450}
                 height={450}
-                className="relative rounded-3xl shadow-2xl"
+                className="relative "
                 priority
               />
             </div>

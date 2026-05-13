@@ -29,12 +29,14 @@ export function Services() {
     {
       title: "Yoga",
       description: "Práctica milenaria para el equilibrio cuerpo-mente.",
-      icon: Sparkles
+      icon: Sparkles,
+      image: "/icons8-yoga-64.png"
     },
     {
       title: "Flores de Bach",
       description: "Terapia floral para el equilibrio emocional.",
-      icon: Sparkles
+      icon: Sparkles,
+      image: "/icons8-massage-oil-64.png"
     }
   ]
 
@@ -99,7 +101,17 @@ export function Services() {
                 className="text-center p-6 bg-card rounded-2xl shadow-md hover:shadow-lg transition-shadow"
               >
                 <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <complement.icon className="h-6 w-6 text-accent" />
+                  {complement.image ? (
+                    <Image
+                      src={complement.image}
+                      alt={complement.title}
+                      width={32}
+                      height={32}
+                      className="object-contain"
+                    />
+                  ) : (
+                    <complement.icon className="h-6 w-6 text-accent" />
+                  )}
                 </div>
                 <h4 className="font-semibold text-foreground mb-2">{complement.title}</h4>
                 <p className="text-sm text-muted-foreground">{complement.description}</p>
