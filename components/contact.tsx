@@ -23,18 +23,18 @@ type ContactMethod = {
 
 export function Contact() {
   const contactMethods: ContactMethod[] = [
-    {
-      icon: () =>
-        (
-          <img src="/icons8-mail-100.png" alt="email" className="h-16 w-16" />
-        ) as ReactNode,
-      title: 'Email',
-      description: 'Escríbeme y te responderé lo antes posible',
-      value: 'rominamelul@gmail.com',
-      href: 'mailto:rominamelul@gmail.com',
-      buttonText: 'Enviar Email',
-      color: 'primary',
-    },
+    // {
+    //   icon: () =>
+    //     (
+    //       <img src="/icons8-mail-100.png" alt="email" className="h-16 w-16" />
+    //     ) as ReactNode,
+    //   title: 'Email',
+    //   description: 'Escríbeme y te responderé lo antes posible',
+    //   value: 'rominamelul@gmail.com',
+    //   href: 'mailto:rominamelul@gmail.com',
+    //   buttonText: 'Enviar Email',
+    //   color: 'primary',
+    // },
     {
       icon: () =>
         (
@@ -74,7 +74,8 @@ export function Contact() {
         </div>
 
         {/* Contact Cards */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="flex justify-center">
+          <div className="w-full max-w-md">
           {contactMethods.map((method) => {
             const Icon = method.icon as LucideIcon
 
@@ -145,22 +146,10 @@ export function Contact() {
               </Card>
             )
           })}
+          </div>
         </div>
 
         {/* Additional Info */}
-        <div className="mt-16 text-center">
-          <div className="inline-flex items-center gap-2 px-6 py-3 bg-secondary/50 rounded-full">
-            {/* <Phone className="h-5 w-5 text-primary" /> */}
-            <img
-              src="/icons8-phone-100.png"
-              alt="WhatsApp"
-              className="h-12 w-12 mr-2"
-            />
-            <span className="text-foreground">
-              También puedes llamar al <strong>632 73 61 33</strong>
-            </span>
-          </div>
-        </div>
       </div>
     </section>
   )
