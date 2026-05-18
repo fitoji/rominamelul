@@ -1,7 +1,12 @@
 'use client'
 
-import Image from "next/image"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card'
 import {
   Dialog,
   DialogContent,
@@ -9,8 +14,9 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import { Users, User, Sparkles, Heart } from "lucide-react"
+} from '@/components/ui/dialog'
+import { Heart, Sparkles, User, Users } from 'lucide-react'
+import Image from 'next/image'
 
 type ServiceDetail = {
   title: string
@@ -24,11 +30,12 @@ type ServiceDetail = {
 export function Services() {
   const services: ServiceDetail[] = [
     {
-      title: "Masaje Terapéutico",
-      description: "Ayuda a movilizar y flexibilizar trabas corporales que aprisionan y debilitan. Libera la energía retenida y recupera la fuerza y alegría de vivir.",
-      modality: "Sesión Individual",
+      title: 'Masaje Terapéutico',
+      description:
+        'Ayuda a movilizar y flexibilizar trabas corporales que aprisionan y debilitan. Libera la energía retenida y recupera la fuerza y alegría de vivir.',
+      modality: 'Sesión Individual',
       icon: User,
-      image: "/images/therapy-1.jpg",
+      image: '/images/therapy-1.jpg',
       fullDescription: `Moviliza trayendo a la superficie trabas corporales que aprisionan y debilitan.
 Libera la energía vital retenida recuperando la fuerza y la alegría de vivir.
 
@@ -42,14 +49,15 @@ El masaje es:
 
 Nos enseña a vivir un estado de relajación natural y necesario, limpiando capa por capa niveles de estrés que enferman debilitando nuestro sistema nervioso e inmunológico.
 
-El trabajo es siempre en todo el cuerpo y me gusta decir que es una reorganización cuerpo-mente.`
+El trabajo es siempre en todo el cuerpo y me gusta decir que es una reorganización cuerpo-mente.`,
     },
     {
-      title: "Movimiento Vital Expresivo",
-      description: "Tiene por objeto facilitar el encuentro de cada uno consigo y con los otros, utilizando la música, la secuencia de movimientos, las expresiones y respiraciones.",
-      modality: "Sesión Grupal",
+      title: 'Trabajo sobre Sí',
+      description:
+        'El hilo conductor de las distintas técnicas utilizadas en la terapia es el Trabajo sobre Sí, que reconoce el auto-conocimiento y la auto-transformación como poder sanador del ser humano.',
+      modality: 'Sesión Grupal',
       icon: Users,
-      image: "/images/therapy-2.jpg",
+      image: '/images/therapy-2.jpg',
       fullDescription: `El Movimiento Vital Expresivo es una práctica que invita a reconectarte con tu cuerpo de manera profunda y transformadora.
 
 A través de la música, secuencias de movimiento, expresiones corporales y respiraciones conscientes, este trabajo facilita:
@@ -60,28 +68,29 @@ A través de la música, secuencias de movimiento, expresiones corporales y resp
 • La liberación emocional: moviendo lo que está guardado en el cuerpo.
 • El fortalecimiento del vínculo cuerpo-mente: integrando movimiento y conciencia.
 
-Es un espacio de探検 (exploración) personal donde cada persona encuentra su propio ritmo y camino hacia el bienestar.`
-    }
+Es un espacio de探検 (exploración) personal donde cada persona encuentra su propio ritmo y camino hacia el bienestar.`,
+    },
   ]
 
   const complements = [
     {
-      title: "Lectura Corporal",
-      description: "Fundamento y técnicas para comprender los mensajes del cuerpo.",
-      icon: Heart
+      title: 'Lectura Corporal',
+      description:
+        'Fundamento y técnicas para comprender los mensajes del cuerpo.',
+      icon: Heart,
     },
     {
-      title: "Yoga",
-      description: "Práctica milenaria para el equilibrio cuerpo-mente.",
+      title: 'Yoga',
+      description: 'Práctica milenaria para el equilibrio cuerpo-mente.',
       icon: Sparkles,
-      image: "/icons8-yoga-64.png"
+      image: '/icons8-yoga-64.png',
     },
     {
-      title: "Flores de Bach",
-      description: "Terapia floral para el equilibrio emocional.",
+      title: 'Flores de Bach',
+      description: 'Terapia floral para el equilibrio emocional.',
       icon: Sparkles,
-      image: "/icons8-massage-oil-64.png"
-    }
+      image: '/icons8-massage-oil-64.png',
+    },
   ]
 
   return (
@@ -96,7 +105,8 @@ Es un espacio de探検 (exploración) personal donde cada persona encuentra su p
             Técnicas de Abordaje
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            La TPI utiliza principalmente dos técnicas de abordaje que se complementan entre sí
+            La TPI utiliza principalmente dos técnicas de abordaje que se
+            complementan entre sí
           </p>
           <div className="w-24 h-1 bg-accent mx-auto rounded-full" />
         </div>
@@ -106,9 +116,7 @@ Es un espacio de探検 (exploración) personal donde cada persona encuentra su p
           {services.map((service) => (
             <Dialog key={service.title}>
               <DialogTrigger asChild>
-                <Card 
-                  className="overflow-hidden border-none shadow-xl hover:shadow-2xl transition-all duration-300 bg-card cursor-pointer hover:scale-[1.02]"
-                >
+                <Card className="overflow-hidden border-none shadow-xl hover:shadow-2xl transition-all duration-300 bg-card cursor-pointer hover:scale-[1.02]">
                   <div className="relative h-64">
                     <Image
                       src={service.image}
@@ -123,19 +131,25 @@ Es un espacio de探検 (exploración) personal donde cada persona encuentra su p
                     </div>
                   </div>
                   <CardHeader>
-                    <CardTitle className="text-2xl text-foreground">{service.title}</CardTitle>
+                    <CardTitle className="text-2xl text-foreground">
+                      {service.title}
+                    </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <CardDescription className="text-base leading-relaxed text-muted-foreground">
                       {service.description}
                     </CardDescription>
-                    <p className="text-sm text-primary mt-4 font-medium">Clic para ver más información →</p>
+                    <p className="text-sm text-primary mt-4 font-medium">
+                      Clic para ver más información →
+                    </p>
                   </CardContent>
                 </Card>
               </DialogTrigger>
               <DialogContent className="max-w-lg max-h-[80vh] overflow-y-auto">
                 <DialogHeader>
-                  <DialogTitle className="text-2xl">{service.title}</DialogTitle>
+                  <DialogTitle className="text-2xl">
+                    {service.title}
+                  </DialogTitle>
                   <DialogDescription className="flex items-center gap-2 mt-2">
                     <service.icon className="h-4 w-4" />
                     {service.modality}
@@ -156,7 +170,7 @@ Es un espacio de探検 (exploración) personal donde cada persona encuentra su p
           </h3>
           <div className="grid sm:grid-cols-3 gap-6">
             {complements.map((complement) => (
-              <div 
+              <div
                 key={complement.title}
                 className="text-center p-6 bg-card rounded-2xl shadow-md hover:shadow-lg transition-shadow"
               >
@@ -173,8 +187,12 @@ Es un espacio de探検 (exploración) personal donde cada persona encuentra su p
                     <complement.icon className="h-6 w-6 text-accent" />
                   )}
                 </div>
-                <h4 className="font-semibold text-foreground mb-2">{complement.title}</h4>
-                <p className="text-sm text-muted-foreground">{complement.description}</p>
+                <h4 className="font-semibold text-foreground mb-2">
+                  {complement.title}
+                </h4>
+                <p className="text-sm text-muted-foreground">
+                  {complement.description}
+                </p>
               </div>
             ))}
           </div>

@@ -1,5 +1,5 @@
-import Image from "next/image"
-import { Quote } from "lucide-react"
+import { Quote } from 'lucide-react'
+import Image from 'next/image'
 
 export function Philosophy() {
   return (
@@ -11,7 +11,7 @@ export function Philosophy() {
             Filosofía
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-foreground text-balance">
-            Nuestra Visión de la Salud
+            Mi Visión de la Salud
           </h2>
           <div className="w-24 h-1 bg-accent mx-auto rounded-full" />
         </div>
@@ -35,7 +35,9 @@ export function Philosophy() {
                   La Salud
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Es el estado de armonía y coherencia entre el <strong className="text-foreground">Sentir</strong> y el <strong className="text-foreground">Expresar</strong>.
+                  Es el estado de armonía y coherencia entre el{' '}
+                  <strong className="text-foreground">Sentir</strong> y el{' '}
+                  <strong className="text-foreground">Expresar</strong>.
                 </p>
               </div>
 
@@ -45,7 +47,9 @@ export function Philosophy() {
                   La Enfermedad
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Es un instrumento de <strong className="text-foreground">purificación</strong> y de reconquista de la Salud.
+                  Es un instrumento de{' '}
+                  <strong className="text-foreground">purificación</strong> y de
+                  reconquista de la Salud.
                 </p>
               </div>
 
@@ -55,7 +59,9 @@ export function Philosophy() {
                   El Ser Humano
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Concebido como un <strong className="text-foreground">Todo</strong> cuyas partes (cuerpo-mente-espíritu) se hallan en constante interacción.
+                  Concebido como un{' '}
+                  <strong className="text-foreground">Todo</strong> cuyas partes
+                  (cuerpo-mente-espíritu) se hallan en constante interacción.
                 </p>
               </div>
             </div>
@@ -77,9 +83,10 @@ export function Philosophy() {
         {/* Compatibility Note */}
         <div className="mt-16 text-center p-8 bg-secondary/50 rounded-2xl">
           <p className="text-lg text-foreground leading-relaxed max-w-3xl mx-auto">
-            El trabajo vivencial con la Terapia Psicocorporal Integradora puede ser{" "}
-            <strong>complemento de otros enfoques de salud</strong> que la persona ya esté 
-            realizando, como psicoterapia verbal, medicina natural o medicina alopática.
+            El trabajo vivencial con la Terapia Psicocorporal Integradora puede
+            ser <strong>complemento de otros enfoques de salud</strong> que la
+            persona ya esté realizando, como psicoterapia verbal, medicina
+            natural o medicina alopática.
           </p>
         </div>
       </div>

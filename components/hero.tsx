@@ -25,14 +25,23 @@ export function Hero() {
                 Terapia Psicocorporal Integradora
               </p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-foreground leading-tight text-balance">
-                Reconecta con tu <span className="text-primary">cuerpo</span>,{' '}
-                <span className="text-accent">mente</span> y{' '}
-                <span className="text-primary">espíritu</span>
+                Una Sesión de TPI con
+                <span className="text-primary"> Romina</span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                La TPI vincula el cuerpo físico con los procesos emocionales,
-                psíquicos y sensoriales del ser humano, facilitando el camino
-                hacia la armonía y el bienestar integral.
+                En nuestro encuentro te propongo establecer un vínculo renovado
+                y saludable con tu cuerpo-mente.
+              </p>
+              <p>
+                A través de la lectura corporal y el masaje vamos escuchando el
+                lenguaje del cuerpo metiéndonos paso a paso en la psique y
+                descubriendo la íntima conexión que existe entre ellos.
+              </p>
+              <p>
+                Contaré con las distintas herramientas para aplicarlas de
+                acuerdo a tu condición en el momento presente. La sesión dura
+                alrededor de 2 horas y la frecuencia terapéutica la
+                estableceremos en conjunto.
               </p>
             </div>
 
