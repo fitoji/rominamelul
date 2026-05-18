@@ -2,7 +2,10 @@ import Image from 'next/image'
 
 export function AboutMe() {
   return (
-    <section id="sobre-mi" className="py-20 md:py-28 bg-muted/30">
+    <section
+      id="sobre-mi"
+      className="min-h-screen py-20 md:py-28 bg-muted/30 flex flex-col justify-center"
+    >
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
@@ -21,7 +24,7 @@ export function AboutMe() {
             <div className="lg:col-span-4 order-1 lg:order-1 relative">
               {/* Background rotated element */}
               <div className="absolute -inset-4 bg-primary/10 rounded-3xl transform -rotate-3" />
-              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-xl">
+              <div className="relative aspect-3/4 rounded-2xl overflow-hidden shadow-xl">
                 <Image
                   src="/images/romina-profile.jpg"
                   alt="Romina Claudia Melul - Terapeuta Psicocorporal"
@@ -92,7 +95,7 @@ export function AboutMe() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 pt-8 mt-8 border-t border-border/50 max-w-lg w-full">
+            {/* <div className="grid grid-cols-3 gap-6 pt-8 mt-8 border-t border-border/50 max-w-lg w-full">
               <div className="text-center">
                 <p className="text-3xl md:text-4xl font-light text-primary">
                   +25
@@ -115,7 +118,7 @@ export function AboutMe() {
                 </p>
                 <p className="text-sm text-muted-foreground mt-1">Barcelona</p>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

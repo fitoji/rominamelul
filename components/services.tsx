@@ -10,8 +10,6 @@ import {
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
-  DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog'
@@ -35,7 +33,7 @@ export function Services() {
         'Ayuda a movilizar y flexibilizar trabas corporales que aprisionan y debilitan. Libera la energía retenida y recupera la fuerza y alegría de vivir.',
       modality: 'Sesión Individual',
       icon: User,
-      image: '/images/therapy-1.jpg',
+      image: '/images/romi-masajes.webp',
       fullDescription: `Moviliza trayendo a la superficie trabas corporales que aprisionan y debilitan.
 Libera la energía vital retenida recuperando la fuerza y la alegría de vivir.
 
@@ -68,7 +66,7 @@ A través de la música, secuencias de movimiento, expresiones corporales y resp
 • La liberación emocional: moviendo lo que está guardado en el cuerpo.
 • El fortalecimiento del vínculo cuerpo-mente: integrando movimiento y conciencia.
 
-Es un espacio de探検 (exploración) personal donde cada persona encuentra su propio ritmo y camino hacia el bienestar.`,
+Es un espacio de exploración personal donde cada persona encuentra su propio ritmo y camino hacia el bienestar.`,
     },
   ]
 
@@ -77,19 +75,49 @@ Es un espacio de探検 (exploración) personal donde cada persona encuentra su p
       title: 'Lectura Corporal',
       description:
         'Fundamento y técnicas para comprender los mensajes del cuerpo.',
+      image: '/icons8-body-64.png',
       icon: Heart,
+      heroImage: '/images/therapy-1.jpg',
+      fullDescription: `Es un lenguaje que nos permite decodificar las señales del cuerpo en correspondencia con la mente, las emociones y las experiencias pasadas.
+
+Nos permite ver un mapa de nosotros mismos y nuestro posicionamiento en la vida hoy, de forma integral.
+
+En sí misma tiene una gran y variada propuesta en cuanto a terapéutica siguiendo la premisa de que la cura viene de la mano del disfrute y la alegría.`,
     },
     {
       title: 'Yoga',
       description: 'Práctica milenaria para el equilibrio cuerpo-mente.',
       icon: Sparkles,
       image: '/icons8-yoga-64.png',
+      heroImage: '/images/therapy-2.jpg',
+      fullDescription: `He comprobado en mi experiencia personal y en la experiencia clínica en el consultorio que la práctica de Hatha Yoga junto con el massage mantienen el cuerpo-mente flexible, fuerte, elástico y adaptable al cambio. Este trabajo en conjunto potencia nuestra capacidad de manejar niveles de estrés con un estado vital, alegre y armónico.
+
+A su vez podemos comprobar con mayor rapidez cómo se corrigen posturas, se desarman vicios posturales y se concientiza la respiración.
+
+También por sí sola, la práctica de Hatha Yoga es un gran aliado en la vida, que sumada al trabajo consciente con la TPI, resultan un dúoo muy provechoso.`,
     },
     {
       title: 'Flores de Bach',
       description: 'Terapia floral para el equilibrio emocional.',
       icon: Sparkles,
       image: '/icons8-massage-oil-64.png',
+      heroImage: '/images/flores-de-bach-kit.webp',
+      fullDescription: `Las esencias florales representan virtudes que todos tenemos. En nuestra experiencia de vida podemos encontrarlas desarmonizadas, a veces por exceso o por desuso.
+
+En la entrevista preparamos una fórmula floral que equilibra de forma natural un desequilibrio de base emocional.
+
+La terapia floral por si sola es una herramienta muy valiosa en la sanación de uno mismo. Sumada al trabajo corporal que te propongo en la TPI, resulta un bálsamo complementario muy poderoso para cicatrizar heridas, elaborar traumas, duelos y condicionamientos profundos.
+
+Resultan muy efectivas tanto para las personas como para los mascotas.`,
+    },
+    {
+      title: 'Movimiento Vital Expresivo',
+      description:
+        'Actividad lúdica, expresiva, creativa y terapéutica grupal.',
+      icon: Sparkles,
+      image: '/icons8-dance-64.png',
+      heroImage: '/images/therapy-2.jpg',
+      fullDescription: `Es una actividad lúdica, expresiva, creativa y terapéutica. Facilita el encuentro de la persona consigo misma y con los otros. Para ello utiliza la música, la secuencia de movimientos, las expresiones corporales, emocionales y la respiración.`,
     },
   ]
 
@@ -145,18 +173,34 @@ Es un espacio de探検 (exploración) personal donde cada persona encuentra su p
                   </CardContent>
                 </Card>
               </DialogTrigger>
-              <DialogContent className="max-w-lg max-h-[80vh] overflow-y-auto">
-                <DialogHeader>
-                  <DialogTitle className="text-2xl">
-                    {service.title}
-                  </DialogTitle>
-                  <DialogDescription className="flex items-center gap-2 mt-2">
-                    <service.icon className="h-4 w-4" />
-                    {service.modality}
-                  </DialogDescription>
-                </DialogHeader>
-                <div className="mt-4 space-y-4 text-muted-foreground whitespace-pre-line leading-relaxed">
-                  {service.fullDescription}
+              <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto p-0 bg-card border-none rounded-2xl">
+                {/* Hero Image */}
+                <div className="relative h-56 w-full">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <DialogTitle className="text-3xl font-semibold text-foreground">
+                      {service.title}
+                    </DialogTitle>
+                    <div className="flex items-center gap-2 mt-2 text-muted-foreground">
+                      <service.icon className="h-4 w-4" />
+                      {service.modality}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="p-6 pb-8">
+                  <div className="prose prose-stone max-w-none">
+                    <div className="text-foreground/90 leading-relaxed whitespace-pre-line">
+                      {service.fullDescription}
+                    </div>
+                  </div>
                 </div>
               </DialogContent>
             </Dialog>
@@ -168,33 +212,87 @@ Es un espacio de探検 (exploración) personal donde cada persona encuentra su p
           <h3 className="text-2xl font-semibold text-foreground mb-8 text-center">
             Prácticas Complementarias
           </h3>
-          <div className="grid sm:grid-cols-3 gap-6">
-            {complements.map((complement) => (
-              <div
-                key={complement.title}
-                className="text-center p-6 bg-card rounded-2xl shadow-md hover:shadow-lg transition-shadow"
-              >
-                <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  {complement.image ? (
-                    <Image
-                      src={complement.image}
-                      alt={complement.title}
-                      width={32}
-                      height={32}
-                      className="object-contain"
-                    />
-                  ) : (
-                    <complement.icon className="h-6 w-6 text-accent" />
-                  )}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {complements.map((complement) => {
+              // Flores de Bach tiene modal
+              if (complement.fullDescription) {
+                return (
+                  <Dialog key={complement.title}>
+                    <DialogTrigger asChild>
+                      <div className="text-center p-6 bg-card rounded-2xl shadow-md hover:shadow-lg transition-all cursor-pointer hover:scale-[1.02]">
+                        <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                          <Image
+                            src={complement.image || ''}
+                            alt={complement.title}
+                            width={32}
+                            height={32}
+                            className="object-contain"
+                          />
+                        </div>
+                        <h4 className="font-semibold text-foreground mb-2">
+                          {complement.title}
+                        </h4>
+                        <p className="text-sm text-muted-foreground">
+                          {complement.description}
+                        </p>
+                        <p className="text-xs text-primary mt-3 font-medium">
+                          Clic para ver más →
+                        </p>
+                      </div>
+                    </DialogTrigger>
+                    <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto p-0 bg-card border-none rounded-2xl">
+                      <div className="relative h-56 w-full">
+                        <Image
+                          src={complement.heroImage || '/images/therapy-1.jpg'}
+                          alt={complement.title}
+                          fill
+                          className="object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
+                        <div className="absolute bottom-0 left-0 right-0 p-6">
+                          <DialogTitle className="text-3xl font-semibold text-foreground">
+                            {complement.title}
+                          </DialogTitle>
+                        </div>
+                      </div>
+                      <div className="p-6 pb-8">
+                        <div className="text-foreground/90 leading-relaxed whitespace-pre-line">
+                          {complement.fullDescription}
+                        </div>
+                      </div>
+                    </DialogContent>
+                  </Dialog>
+                )
+              }
+
+              // Los otros dos son cards simples
+              return (
+                <div
+                  key={complement.title}
+                  className="text-center p-6 bg-card rounded-2xl shadow-md hover:shadow-lg transition-shadow"
+                >
+                  <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    {complement.image ? (
+                      <Image
+                        src={complement.image}
+                        alt={complement.title}
+                        width={32}
+                        height={32}
+                        className="object-contain"
+                      />
+                    ) : (
+                      <complement.icon className="h-6 w-6 text-accent" />
+                    )}
+                  </div>
+                  <h4 className="font-semibold text-foreground mb-2">
+                    {complement.title}
+                  </h4>
+                  <p className="text-sm text-muted-foreground">
+                    {complement.description}
+                  </p>
                 </div>
-                <h4 className="font-semibold text-foreground mb-2">
-                  {complement.title}
-                </h4>
-                <p className="text-sm text-muted-foreground">
-                  {complement.description}
-                </p>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </div>

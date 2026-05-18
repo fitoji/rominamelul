@@ -48,8 +48,8 @@ export function Philosophy() {
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Es un instrumento de{' '}
-                  <strong className="text-foreground">purificación</strong> y de
-                  reconquista de la Salud.
+                  <strong className="text-foreground">Conciencia</strong> y
+                  reconquista del estado de salud.
                 </p>
               </div>
 
@@ -61,7 +61,14 @@ export function Philosophy() {
                 <p className="text-muted-foreground leading-relaxed">
                   Concebido como un{' '}
                   <strong className="text-foreground">Todo</strong> cuyas partes
-                  (cuerpo-mente-espíritu) se hallan en constante interacción.
+                  (cuerpo-mente-espíritu) se hallan en constante interacción,
+                  aceptando las manifestaciones del cuerpo físico como
+                  mecanismos de búsqueda de curación del interior, del alma, del
+                  Ser en su aprendizaje y evolución. Las dolencias entonces, no
+                  son vistas como un proceso de fragilidad o de debilitamiento
+                  del cuerpo físico; sino como una forma explícita de aquello
+                  que necesita ser visto, cuidado, madurado en el plano
+                  emocional y psíquico.
                 </p>
               </div>
             </div>

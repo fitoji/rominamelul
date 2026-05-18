@@ -1,8 +1,9 @@
+import { TooltipProvider } from '@/components/ui/tooltip'
+import { organizationStructuredData, personStructuredData } from '@/lib/seo'
+import { Analytics } from '@vercel/analytics/next'
 import type { Metadata } from 'next'
 import { Inter, Lora } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
-import { organizationStructuredData, personStructuredData } from '@/lib/seo'
 
 const lora = Lora({
   subsets: ['latin'],
@@ -21,8 +22,16 @@ export const metadata: Metadata = {
     default: 'Romina Melul | Terapeuta Psicocorporal',
     template: '%s | Romina Melul',
   },
-  description: 'Terapia Psicocorporal Integradora - Reconecta con tu cuerpo, mente y espíritu. Masaje terapéutico y movimiento vital expresivo en Buenos Aires.',
-  keywords: ['terapia psicocorporal', 'masaje terapéutico', 'movimiento vital expresivo', 'terapeuta corporal', 'sanación cuerpo-mente', 'Buenos Aires'],
+  description:
+    'Terapia Psicocorporal Integradora - Reconecta con tu cuerpo, mente y espíritu. Masaje terapéutico y movimiento vital expresivo en Buenos Aires.',
+  keywords: [
+    'terapia psicocorporal',
+    'masaje terapéutico',
+    'movimiento vital expresivo',
+    'terapeuta corporal',
+    'sanación cuerpo-mente',
+    'Buenos Aires',
+  ],
   authors: [{ name: 'Romina Melul' }],
   creator: 'Romina Melul',
   publisher: 'Romina Melul',
@@ -43,7 +52,8 @@ export const metadata: Metadata = {
     url: 'https://rominamelul.com',
     siteName: 'Romina Melul',
     title: 'Romina Melul | Terapeuta Psicocorporal',
-    description: 'Terapia Psicocorporal Integradora - Reconecta con tu cuerpo, mente y espíritu.',
+    description:
+      'Terapia Psicocorporal Integradora - Reconecta con tu cuerpo, mente y espíritu.',
     images: [
       {
         url: '/images/logo.png',
@@ -56,7 +66,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Romina Melul | Terapeuta Psicocorporal',
-    description: 'Terapia Psicocorporal Integradora - Reconecta con tu cuerpo, mente y espíritu.',
+    description:
+      'Terapia Psicocorporal Integradora - Reconecta con tu cuerpo, mente y espíritu.',
     images: ['/images/logo.png'],
     creator: '@rominamelul',
   },
@@ -69,17 +80,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className="bg-background">
-      <body className={`${lora.variable} ${inter.variable} font-serif antialiased`}>
-        {children}
+      <body
+        className={`${lora.variable} ${inter.variable} font-serif antialiased`}
+      >
+        <TooltipProvider>{children}</TooltipProvider>
+
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationStructuredData) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationStructuredData),
+          }}
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personStructuredData) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(personStructuredData),
+          }}
         />
-        {process.env.NODE_ENV === 'production' && <Analytics />}
+        <Analytics />
       </body>
     </html>
   )

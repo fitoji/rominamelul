@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button'
 import { ArrowDown } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip'
 
 export function Hero() {
   return (
@@ -25,9 +26,21 @@ export function Hero() {
                 Terapia Psicocorporal Integradora
               </p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-foreground leading-tight text-balance">
-                Una Sesión de TPI con
+                Una Sesión de
+                <Tooltip>
+                  <TooltipTrigger>
+                    <strong className="underline decoration-dotted decoration-primary underline-offset-2">
+                      TPI
+                    </strong>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>Terapia Psicocorporal Integradora</p>
+                  </TooltipContent>
+                </Tooltip>{' '}
+                con
                 <span className="text-primary"> Romina</span>
               </h1>
+
               <p className="text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 leading-relaxed">
                 En nuestro encuentro te propongo establecer un vínculo renovado
                 y saludable con tu cuerpo-mente.
