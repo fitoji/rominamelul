@@ -1,20 +1,21 @@
-"use client"
+'use client'
 
-import Image from "next/image"
-import Link from "next/link"
-import { useState } from "react"
-import { Menu, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Button } from '@/components/ui/button'
+import { Menu, X } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useState } from 'react'
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const navLinks = [
-    { href: "#inicio", label: "Inicio" },
-    { href: "#sobre-mi", label: "Sobre la Terapia" },
-    { href: "#servicios", label: "Servicios" },
-    { href: "#filosofia", label: "Filosofía" },
-    { href: "#contacto", label: "Contacto" },
+    { href: '#inicio', label: 'Inicio' },
+    { href: '#sobre-mi', label: 'Sobre Mí' },
+    { href: '#terapia', label: 'La Terapia' },
+    { href: '#servicios', label: 'Servicios' },
+    { href: '#filosofia', label: 'Filosofía' },
+    { href: '#contacto', label: 'Contacto' },
   ]
 
   return (
@@ -31,8 +32,12 @@ export function Header() {
               className="rounded-lg"
             />
             <div className="hidden sm:block">
-              <p className="text-lg font-semibold text-foreground">Romina Melul</p>
-              <p className="text-xs text-muted-foreground tracking-wide">Terapeuta Psicocorporal</p>
+              <p className="text-lg font-semibold text-foreground">
+                Romina Melul
+              </p>
+              <p className="text-xs text-muted-foreground tracking-wide">
+                Terapeuta Psicocorporal
+              </p>
             </div>
           </Link>
 
@@ -51,7 +56,10 @@ export function Header() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
+            <Button
+              asChild
+              className="bg-primary hover:bg-primary/90 text-primary-foreground"
+            >
               <Link href="#contacto">Reservar Sesión</Link>
             </Button>
           </div>
@@ -63,7 +71,11 @@ export function Header() {
             className="md:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
           </Button>
         </nav>
 
@@ -81,7 +93,10 @@ export function Header() {
                   {link.label}
                 </Link>
               ))}
-              <Button asChild className="mt-4 bg-primary hover:bg-primary/90 text-primary-foreground">
+              <Button
+                asChild
+                className="mt-4 bg-primary hover:bg-primary/90 text-primary-foreground"
+              >
                 <Link href="#contacto" onClick={() => setIsMenuOpen(false)}>
                   Reservar Sesión
                 </Link>

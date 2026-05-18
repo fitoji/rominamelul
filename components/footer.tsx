@@ -7,7 +7,8 @@ export function Footer() {
 
   const navLinks = [
     { href: '#inicio', label: 'Inicio' },
-    { href: '#sobre-mi', label: 'Sobre la Terapia' },
+    { href: '#sobre-mi', label: 'Sobre Mí' },
+    { href: '#terapia', label: 'Sobre la Terapia' },
     { href: '#servicios', label: 'Servicios' },
     { href: '#filosofia', label: 'Filosofía' },
     { href: '#contacto', label: 'Contacto' },

@@ -20,7 +20,7 @@ export function About() {
   ]
 
   return (
-    <section id="sobre-mi" className="py-24 bg-card">
+    <section id="terapia" className="py-24 bg-card">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16 space-y-4">
