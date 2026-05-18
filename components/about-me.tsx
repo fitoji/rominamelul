@@ -78,41 +78,42 @@ export function AboutMe() {
                   hogar.
                 </p>
               </div>
+            </div>
+          </div>
 
-              {/* Quote */}
-              <div className="relative mt-10 p-8 bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl border-l-4 border-accent">
-                <p className="text-xl text-foreground italic leading-relaxed font-serif">
-                  &ldquo;Escuchar, sentir y usar tu inteligencia cuerpo-mente
-                  como camino hacia la salud&rdquo;
+          {/* Quote & Stats - Centered below the entire grid */}
+          <div className="flex flex-col items-center mt-12">
+            {/* Quote */}
+            <div className="relative p-8 bg-linear-to-br from-primary/5 to-accent/5 rounded-2xl border-l-4 border-accent text-center max-w-2xl w-full">
+              <p className="text-xl text-foreground italic leading-relaxed font-serif">
+                &ldquo;Escuchar, sentir y usar tu inteligencia cuerpo-mente como
+                camino hacia la salud&rdquo;
+              </p>
+            </div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-6 pt-8 mt-8 border-t border-border/50 max-w-lg w-full">
+              <div className="text-center">
+                <p className="text-3xl md:text-4xl font-light text-primary">
+                  +25
+                </p>
+                <p className="text-sm text-muted-foreground mt-1">
+                  Años de experiencia
                 </p>
               </div>
-
-              {/* Stats */}
-              <div className="grid grid-cols-3 gap-6 pt-8 mt-4 border-t border-border/50">
-                <div className="text-center lg:text-left">
-                  <p className="text-3xl md:text-4xl font-light text-primary">
-                    +25
-                  </p>
-                  <p className="text-sm text-muted-foreground mt-1">
-                    Años de experiencia
-                  </p>
-                </div>
-                <div className="text-center lg:text-left">
-                  <p className="text-3xl md:text-4xl font-light text-primary">
-                    2005
-                  </p>
-                  <p className="text-sm text-muted-foreground mt-1">
-                    Inicio profesional
-                  </p>
-                </div>
-                <div className="text-center lg:text-left">
-                  <p className="text-3xl md:text-4xl font-light text-primary">
-                    BCN
-                  </p>
-                  <p className="text-sm text-muted-foreground mt-1">
-                    Barcelona
-                  </p>
-                </div>
+              <div className="text-center">
+                <p className="text-3xl md:text-4xl font-light text-primary">
+                  2005
+                </p>
+                <p className="text-sm text-muted-foreground mt-1">
+                  Inicio profesional
+                </p>
+              </div>
+              <div className="text-center">
+                <p className="text-3xl md:text-4xl font-light text-primary">
+                  BCN
+                </p>
+                <p className="text-sm text-muted-foreground mt-1">Barcelona</p>
               </div>
             </div>
           </div>

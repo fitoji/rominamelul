@@ -32,12 +32,12 @@ export function Hero() {
                 En nuestro encuentro te propongo establecer un vínculo renovado
                 y saludable con tu cuerpo-mente.
               </p>
-              <p>
+              <p className="text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 leading-relaxed">
                 A través de la lectura corporal y el masaje vamos escuchando el
                 lenguaje del cuerpo metiéndonos paso a paso en la psique y
                 descubriendo la íntima conexión que existe entre ellos.
               </p>
-              <p>
+              <p className="text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 leading-relaxed">
                 Contaré con las distintas herramientas para aplicarlas de
                 acuerdo a tu condición en el momento presente. La sesión dura
                 alrededor de 2 horas y la frecuencia terapéutica la
