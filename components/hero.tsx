@@ -86,7 +86,8 @@ export function Hero() {
                 alt="Terapia Psicocorporal - Equilibrio y Armonía"
                 width={450}
                 height={450}
-                className="relative "
+                className="relative"
+                style={{ width: 'auto', height: 'auto' }}
                 priority
               />
             </div>

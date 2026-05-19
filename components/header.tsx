@@ -29,7 +29,7 @@ export function Header() {
               alt="Romina Melul - Terapia Psicocorporal"
               width={50}
               height={50}
-              className="rounded-lg"
+              className="rounded-lg h-10 w-auto"
             />
             <div className="hidden sm:block">
               <p className="text-lg font-semibold text-foreground">

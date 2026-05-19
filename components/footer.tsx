@@ -26,6 +26,7 @@ export function Footer() {
               width={60}
               height={60}
               className="rounded-lg"
+              style={{ width: 'auto', height: 'auto' }}
             />
             <div>
               <p className="text-lg font-semibold text-foreground">

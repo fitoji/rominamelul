@@ -82,7 +82,8 @@ export function Philosophy() {
               alt="Filosofía de la Terapia Psicocorporal"
               width={600}
               height={500}
-              className="relative rounded-2xl shadow-xl object-cover w-full h-[500px]"
+              className="relative rounded-2xl shadow-xl object-cover"
+              style={{ width: 'auto', height: 'auto' }}
             />
           </div>
         </div>
