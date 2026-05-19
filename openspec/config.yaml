@@ -1,12 +1,9 @@
 strict_tdd: false
 context: |
-  romina-web is a Node.js/TypeScript, React, Next.js project.
-  Detected markers: package.json, tsconfig.json, pnpm package manager.
-  Package managers: pnpm.
-  No reliable test runner was detected; verify testing manually before enabling strict TDD.
-  Unit tests: none.
-  Integration tests: none.
-  E2E tests: none.
+  romina-web is a Node.js/TypeScript, React, Next.js 16.2.4 project with React 19 and Tailwind CSS v4.
+  Package manager: pnpm.
+  No test runner was detected; strict TDD is disabled until a testing framework is added.
+  Stack: Next.js, React 19, TypeScript 5.7.3, Tailwind CSS 4.2.0, shadcn/ui (Radix primitives), Zod 3.24.1, React Hook Form 7.54.1, Lucide icons.
 rules:
   proposal:
     require_problem_statement: true
@@ -21,7 +18,7 @@ rules:
   verify:
     test_command: ""
 testing:
-  detected: "2026-05-18"
+  detected: "2026-05-19"
   runner:
     command: ""
     framework: ""
@@ -30,25 +27,22 @@ testing:
     integration: ""
     e2e: ""
   commands:
-    unit:
-      []
-    integration:
-      []
-    e2e:
-      []
+    unit: []
+    integration: []
+    e2e: []
   coverage:
     command: ""
-    commands:
-      []
+    commands: []
 quality:
   lint: "pnpm run lint"
   lint_commands:
     - scope: "."
       command: "pnpm run lint"
-      framework: "linter"
-  typecheck: ""
+      framework: "eslint"
+  typecheck: "npx tsc --noEmit"
   typecheck_commands:
-    []
+    - scope: "."
+      command: "npx tsc --noEmit"
+      framework: "typescript"
   format: ""
-  format_commands:
-    []
+  format_commands: []

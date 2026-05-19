@@ -92,7 +92,7 @@
 }
 
 @theme inline {
-  --font-sans: 'Cormorant Garamond', 'Georgia', serif;
+  --font-sans: 'Nunito', 'Helvetica', 'Arial', sans-serif;
   --font-serif: 'Lora', 'Georgia', serif;
   --font-mono: 'Geist Mono', 'Geist Mono Fallback';
   --color-background: var(--background);

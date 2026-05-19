@@ -2,7 +2,7 @@ import { TooltipProvider } from '@/components/ui/tooltip'
 import { organizationStructuredData, personStructuredData } from '@/lib/seo'
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata } from 'next'
-import { Inter, Lora } from 'next/font/google'
+import { Nunito, Lora } from 'next/font/google'
 import './globals.css'
 
 const lora = Lora({
@@ -11,8 +11,9 @@ const lora = Lora({
   variable: '--font-serif',
 })
 
-const inter = Inter({
+const nunito = Nunito({
   subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-sans',
 })
 
@@ -81,7 +82,7 @@ export default function RootLayout({
   return (
     <html lang="es" className="bg-background">
       <body
-        className={`${lora.variable} ${inter.variable} font-serif antialiased`}
+        className={`${lora.variable} ${nunito.variable} font-sans antialiased`}
       >
         <TooltipProvider>{children}</TooltipProvider>
 
