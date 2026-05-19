@@ -82,7 +82,7 @@ export function Hero() {
             <div className="relative">
               <div className="absolute inset-0  " />
               <Image
-                src="/romina-logo2.png"
+                src="/romina-logo2.svg"
                 alt="Terapia Psicocorporal - Equilibrio y Armonía"
                 width={450}
                 height={450}
@@ -99,8 +99,9 @@ export function Hero() {
           <Link
             href="#sobre-mi"
             className="text-primary hover:text-primary/80 transition-colors"
+            aria-label="Ir a Sobre Mí"
           >
-            <ArrowDown className="h-8 w-8" />
+            <ArrowDown className="h-8 w-8" aria-hidden="true" />
           </Link>
         </div>
       </div>

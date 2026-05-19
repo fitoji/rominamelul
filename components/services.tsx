@@ -10,6 +10,7 @@ import {
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog'
@@ -154,7 +155,7 @@ Resultan muy efectivas tanto para las personas como para los mascotas.`,
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-card/90 to-transparent" />
                     <div className="absolute bottom-4 left-4 flex items-center gap-2 bg-primary/90 text-primary-foreground px-3 py-1 rounded-full text-sm">
-                      <service.icon className="h-4 w-4" />
+                      <service.icon className="h-4 w-4" aria-hidden="true" />
                       {service.modality}
                     </div>
                   </div>
@@ -187,10 +188,9 @@ Resultan muy efectivas tanto para las personas como para los mascotas.`,
                     <DialogTitle className="text-3xl font-semibold text-foreground">
                       {service.title}
                     </DialogTitle>
-                    <div className="flex items-center gap-2 mt-2 text-muted-foreground">
-                      <service.icon className="h-4 w-4" />
+                    <DialogDescription className="text-muted-foreground mt-1">
                       {service.modality}
-                    </div>
+                    </DialogDescription>
                   </div>
                 </div>
 
@@ -253,6 +253,9 @@ Resultan muy efectivas tanto para las personas como para los mascotas.`,
                           <DialogTitle className="text-3xl font-semibold text-foreground">
                             {complement.title}
                           </DialogTitle>
+                          <DialogDescription className="text-muted-foreground mt-1">
+                            {complement.description}
+                          </DialogDescription>
                         </div>
                       </div>
                       <div className="p-6 pb-8">
@@ -281,7 +284,7 @@ Resultan muy efectivas tanto para las personas como para los mascotas.`,
                         className="object-contain"
                       />
                     ) : (
-                      <complement.icon className="h-6 w-6 text-accent" />
+                      <complement.icon className="h-6 w-6 text-accent" aria-hidden="true" />
                     )}
                   </div>
                   <h4 className="font-semibold text-foreground mb-2">

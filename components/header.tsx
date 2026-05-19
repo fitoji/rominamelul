@@ -70,11 +70,12 @@ export function Header() {
             size="icon"
             className="md:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
           >
             {isMenuOpen ? (
-              <X className="h-6 w-6" />
+              <X className="h-6 w-6" aria-hidden="true" />
             ) : (
-              <Menu className="h-6 w-6" />
+              <Menu className="h-6 w-6" aria-hidden="true" />
             )}
           </Button>
         </nav>

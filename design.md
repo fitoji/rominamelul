@@ -10,31 +10,31 @@ Portfolio website for Romina Claudia Melul, a psychocorporal therapist specializ
 
 ### Light Mode
 
-| Token | Value (OKLCH) | Usage |
-|-------|---------------|-------|
-| `--background` | `98 0.005 200` | Page background - soft white/cream |
-| `--foreground` | `25 0.02 220` | Primary text - dark teal |
-| `--primary` | `65 0.14 200` | Primary actions, links - turquoise (from logo) |
-| `--primary-foreground` | `100 0 0` | Text on primary - white |
-| `--secondary` | `92 0.03 200` | Secondary elements - light turquoise |
-| `--secondary-foreground` | `35 0.08 200` | Text on secondary |
-| `--accent` | `78 0.15 75` | Accent/highlights - golden/orange (from logo sun) |
-| `--accent-foreground` | `25 0.05 75` | Text on accent |
-| `--muted` | `95 0.01 200` | Muted backgrounds |
-| `--muted-foreground` | `50 0.02 220` | Muted text |
-| `--card` | `100 0 0` | Card backgrounds - pure white |
-| `--card-foreground` | `25 0.02 220` | Card text |
-| `--border` | `90 0.02 200` | Borders - light gray-teal |
-| `--ring` | `65 0.14 200` | Focus rings |
+| Token                    | Value (OKLCH)  | Usage                                             |
+| ------------------------ | -------------- | ------------------------------------------------- |
+| `--background`           | `98 0.005 200` | Page background - soft white/cream                |
+| `--foreground`           | `25 0.02 220`  | Primary text - dark teal                          |
+| `--primary`              | `65 0.14 200`  | Primary actions, links - turquoise (from logo)    |
+| `--primary-foreground`   | `100 0 0`      | Text on primary - white                           |
+| `--secondary`            | `92 0.03 200`  | Secondary elements - light turquoise              |
+| `--secondary-foreground` | `35 0.08 200`  | Text on secondary                                 |
+| `--accent`               | `78 0.15 75`   | Accent/highlights - golden/orange (from logo sun) |
+| `--accent-foreground`    | `25 0.05 75`   | Text on accent                                    |
+| `--muted`                | `95 0.01 200`  | Muted backgrounds                                 |
+| `--muted-foreground`     | `50 0.02 220`  | Muted text                                        |
+| `--card`                 | `100 0 0`      | Card backgrounds - pure white                     |
+| `--card-foreground`      | `25 0.02 220`  | Card text                                         |
+| `--border`               | `90 0.02 200`  | Borders - light gray-teal                         |
+| `--ring`                 | `65 0.14 200`  | Focus rings                                       |
 
 ### Dark Mode
 
-| Token | Value (OKLCH) | Usage |
-|-------|---------------|-------|
-| `--background` | `18 0.02 220` | Dark background - deep teal |
-| `--foreground` | `95 0.005 200` | Text - soft white |
-| `--primary` | `70 0.14 200` | Brighter turquoise |
-| `--accent` | `75 0.15 75` | Brighter gold |
+| Token          | Value (OKLCH)  | Usage                       |
+| -------------- | -------------- | --------------------------- |
+| `--background` | `18 0.02 220`  | Dark background - deep teal |
+| `--foreground` | `95 0.005 200` | Text - soft white           |
+| `--primary`    | `70 0.14 200`  | Brighter turquoise          |
+| `--accent`     | `75 0.15 75`   | Brighter gold               |
 
 ---
 
@@ -211,7 +211,7 @@ Custom icons in `/icons8-*.png` format for complement practices.
 ### Assets
 
 - Hero images: `/images/therapy-1.jpg`, `/images/therapy-2.jpg`
-- Profile: `/images/romina-profile.jpg`
+- Profile: `/images/romina_portada.webp`
 - Logo: `/images/logo.png`
 - Icons: `/icons8-*.png`
 
