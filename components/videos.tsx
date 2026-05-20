@@ -68,7 +68,7 @@ export function Videos() {
         </div>
 
         {/* Call to Action */}
-        <div className="text-center mt-12">
+        {/* <div className="text-center mt-12">
           <a
             href="https://www.youtube.com/@RominaMelul"
             target="_blank"
@@ -90,7 +90,7 @@ export function Videos() {
               />
             </svg>
           </a>
-        </div>
+        </div> */}
       </div>
     </section>
   )
