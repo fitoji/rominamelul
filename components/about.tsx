@@ -35,16 +35,37 @@ export function About() {
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Image */}
-          <div className="relative order-2 lg:order-1">
+          {/* <div className="relative order-2 lg:order-1">
             <div className="absolute -inset-4 bg-primary/10 rounded-3xl transform -rotate-3" />
             <Image
-              src="/images/therapy-1.jpg"
+              src="/images/romi02-masajes.webp"
               alt="Sesión de Terapia Psicocorporal"
               width={600}
-              height={450}
+              height={400}
               className="relative rounded-2xl shadow-xl object-cover w-full h-100"
             />
-          </div>
+          </div> */}
+          
+          <div className="relative group">
+  {/* Halo difuso de fondo */}
+  <div className="absolute -inset-6 bg-linear-to-tr from-primary/20 via-primary/5 to-transparent rounded-2rem blur-2xl opacity-70 group-hover:opacity-100 transition-opacity duration-700" />
+
+  {/* Forma decorativa rotada */}
+  <div className="absolute -inset-4 bg-linear-to-br from-primary/15 to-primary/5 rounded-3xl transform -rotate-3 transition-transform duration-700 group-hover:-rotate-2" />
+
+  {/* Contenedor de la imagen */}
+  <div className="relative overflow-hidden rounded-2xl ring-1 ring-white/80 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.25)] transition-all duration-700 group-hover:shadow-[0_30px_80px_-20px_rgba(0,0,0,0.35)] group-hover:-translate-y-1">
+    <Image
+      src="/images/romi02-masajes.webp"
+      alt="Sesión de Terapia Psicocorporal"
+      width={600}
+      height={400}
+      className="object-cover w-full h-100 transition-transform duration-1200 ease-out group-hover:scale-105"
+    />
+    {/* Veladura sutil para dar profundidad */}
+    <div className="absolute inset-0 bg-linear-to-t from-accent/30 via-transparent to-slate-100/30 pointer-events-none" />
+  </div>
+</div>
 
           {/* Content */}
           <div className="space-y-8 order-1 lg:order-2">

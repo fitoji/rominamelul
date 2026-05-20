@@ -153,7 +153,7 @@ Resultan muy efectivas tanto para las personas como para los mascotas.`,
                       fill
                       className="object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-card/90 to-transparent" />
+                    <div className="absolute inset-0 bg-linear-to-t from-card/90 to-transparent" />
                     <div className="absolute bottom-4 left-4 flex items-center gap-2 bg-primary/90 text-primary-foreground px-3 py-1 rounded-full text-sm">
                       <service.icon className="h-4 w-4" aria-hidden="true" />
                       {service.modality}

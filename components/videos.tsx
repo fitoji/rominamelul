@@ -21,7 +21,7 @@ export function Videos() {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10  rounded-full mb-6 hover:shadow-2xl transition-all duration-300">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6">
             <Play className="w-4 h-4 text-primary" />
             <span className="text-sm font-sans font-medium text-primary">
               Contenido en Video
@@ -46,7 +46,7 @@ export function Videos() {
               {/* Video Embed */}
               <div className="aspect-video w-full">
                 <iframe
-                  src={`https://www.youtube.com/embed/videoseries?list=${playlist.playlistId}`}
+                  src={`https://www.youtube.com/embed?listType=playlist&list=${playlist.playlistId}&rel=0`}
                   title={playlist.title}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
