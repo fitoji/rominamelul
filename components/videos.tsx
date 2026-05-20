@@ -1,6 +1,7 @@
 "use client"
 
 import { Play } from "lucide-react"
+import Link from "next/link"
 
 export function Videos() {
   const playlists = [
@@ -62,20 +63,15 @@ export function Videos() {
                 <p className="text-muted-foreground font-sans">
                   {playlist.description}
                 </p>
-              </div>
-            </div>
-          ))}
-        </div>
+                  <div className="text-center mt-12">
+          <Link
+            href={`https://www.youtube.com/playlist?list=${playlist.playlistId}&rel=0`}
 
-        {/* Call to Action */}
-        {/* <div className="text-center mt-12">
-          <a
-            href="https://www.youtube.com/@RominaMelul"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-sans font-medium transition-colors"
           >
-            <span>Ver más en mi canal de YouTube</span>
+            <span>Playlist {playlist.title}</span>
             <svg
               className="w-4 h-4"
               fill="none"
@@ -89,8 +85,15 @@ export function Videos() {
                 d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
               />
             </svg>
-          </a>
-        </div> */}
+          </Link>
+        </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Call to Action */}
+      
       </div>
     </section>
   )

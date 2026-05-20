@@ -90,7 +90,7 @@ En sí misma tiene una gran y variada propuesta en cuanto a terapéutica siguien
       description: 'Práctica milenaria para el equilibrio cuerpo-mente.',
       icon: Sparkles,
       image: '/icons8-yoga-64.png',
-      heroImage: '/images/therapy-2.jpg',
+      heroImage: '/images/romi-yoga02.webp',
       fullDescription: `He comprobado en mi experiencia personal y en la experiencia clínica en el consultorio que la práctica de Hatha Yoga junto con el massage mantienen el cuerpo-mente flexible, fuerte, elástico y adaptable al cambio. Este trabajo en conjunto potencia nuestra capacidad de manejar niveles de estrés con un estado vital, alegre y armónico.
 
 A su vez podemos comprobar con mayor rapidez cómo se corrigen posturas, se desarman vicios posturales y se concientiza la respiración.
