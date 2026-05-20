@@ -1,6 +1,7 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
+import { navLinks } from '@/lib/nav-links'
 import { Menu, X } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -9,14 +10,7 @@ import { useState } from 'react'
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  const navLinks = [
-    { href: '#inicio', label: 'Inicio' },
-    { href: '#sobre-mi', label: 'Sobre Mí' },
-    { href: '#terapia', label: 'La Terapia' },
-    { href: '#servicios', label: 'Servicios' },
-    { href: '#filosofia', label: 'Filosofía' },
-    { href: '#contacto', label: 'Contacto' },
-  ]
+  
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">

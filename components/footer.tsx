@@ -1,3 +1,4 @@
+import { navLinks } from '@/lib/nav-links'
 import { Heart } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -5,14 +6,7 @@ import Link from 'next/link'
 export function Footer() {
   const currentYear = new Date().getFullYear()
 
-  const navLinks = [
-    { href: '#inicio', label: 'Inicio' },
-    { href: '#sobre-mi', label: 'Sobre Mí' },
-    { href: '#terapia', label: 'Sobre la Terapia' },
-    { href: '#servicios', label: 'Servicios' },
-    { href: '#filosofia', label: 'Filosofía' },
-    { href: '#contacto', label: 'Contacto' },
-  ]
+
 
   return (
     <footer className="bg-card border-t border-border">
