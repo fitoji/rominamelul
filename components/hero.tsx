@@ -79,8 +79,8 @@ export function Hero() {
 
           {/* Logo/Image */}
           <div className="flex justify-center lg:justify-end">
-            <div className="relative">
-              <div className="absolute inset-0  " />
+          <div className="hover-spin rounded-full transition-all duration-900">
+              <div className="absolute inset-0 " />
               <Image
                 src="/romina-logo2.svg"
                 alt="Terapia Psicocorporal - Equilibrio y Armonía"

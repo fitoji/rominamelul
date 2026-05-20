@@ -146,3 +146,17 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Infinite rotation animation for hover */
+@keyframes spin-infinite {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hover-spin:hover {
+  animation: spin-infinite 2s linear infinite;
+}
