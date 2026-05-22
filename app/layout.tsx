@@ -2,7 +2,7 @@ import { TooltipProvider } from '@/components/ui/tooltip'
 import { organizationStructuredData, personStructuredData } from '@/lib/seo'
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata } from 'next'
-import { Nunito, Lora } from 'next/font/google'
+import { Lora, Nunito } from 'next/font/google'
 import './globals.css'
 
 const lora = Lora({
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     'movimiento vital expresivo',
     'terapeuta corporal',
     'sanación cuerpo-mente',
-    'Buenos Aires',
+    'Barcelona',
   ],
   authors: [{ name: 'Romina Melul' }],
   creator: 'Romina Melul',
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    locale: 'es_AR',
+    locale: 'es_ES',
     url: 'https://rominamelul.com',
     siteName: 'Romina Melul',
     title: 'Romina Melul | Terapeuta Psicocorporal',
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
       'Terapia Psicocorporal Integradora - Reconecta con tu cuerpo, mente y espíritu.',
     images: [
       {
-        url: '/images/logo.png',
+        url: '/romina-logo2.svg',
         width: 1200,
         height: 630,
         alt: 'Romina Melul - Terapeuta Psicocorporal',
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     title: 'Romina Melul | Terapeuta Psicocorporal',
     description:
       'Terapia Psicocorporal Integradora - Reconecta con tu cuerpo, mente y espíritu.',
-    images: ['/images/logo.png'],
+    images: ['/romina-logo2.svg'],
     creator: '@rominamelul',
   },
 }
