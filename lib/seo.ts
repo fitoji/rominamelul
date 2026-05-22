@@ -1,15 +1,29 @@
+export const siteUrl = 'https://rominamelul.com'
+
+export const siteDescription =
+  'Terapia Psicocorporal Integradora en Barcelona y Costa Brava. Masaje terapéutico y movimiento vital expresivo. Reconecta con tu cuerpo, mente y espíritu.'
+
+export const ogImage = {
+  url: '/images/logo.png',
+  width: 863,
+  height: 969,
+  alt: 'Romina Melul - Terapeuta Psicocorporal',
+} as const
+
 export const organizationStructuredData = {
   '@context': 'https://schema.org',
   '@type': 'HealthAndBeautyBusiness',
   name: 'Romina Melul',
-  description: 'Terapia Psicocorporal Integradora',
-  image: 'https://rominamelul.com/images/logo.png',
+  description: siteDescription,
+  image: `${siteUrl}/images/logo.png`,
   address: {
     '@type': 'PostalAddress',
-    addressLocality: 'España',
+    addressLocality: 'Barcelona',
+    addressRegion: 'Cataluña',
     addressCountry: 'ES',
   },
-  url: 'https://rominamelul.com',
+  areaServed: ['Barcelona', 'Costa Brava'],
+  url: siteUrl,
   telephone: '+34326327361',
   priceRange: '€€',
 }
@@ -19,6 +33,10 @@ export const personStructuredData = {
   '@type': 'Person',
   name: 'Romina Melul',
   jobTitle: 'Terapeuta Psicocorporal',
-  image: 'https://rominamelul.com/images/logo.png',
-  url: 'https://rominamelul.com',
+  image: `${siteUrl}/images/logo.png`,
+  url: siteUrl,
+  worksFor: {
+    '@type': 'HealthAndBeautyBusiness',
+    name: 'Romina Melul',
+  },
 }

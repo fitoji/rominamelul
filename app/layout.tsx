@@ -1,5 +1,11 @@
 import { TooltipProvider } from '@/components/ui/tooltip'
-import { organizationStructuredData, personStructuredData } from '@/lib/seo'
+import {
+  ogImage,
+  organizationStructuredData,
+  personStructuredData,
+  siteDescription,
+  siteUrl,
+} from '@/lib/seo'
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata } from 'next'
 import { Lora, Nunito } from 'next/font/google'
@@ -18,13 +24,12 @@ const nunito = Nunito({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://rominamelul.com'),
+  metadataBase: new URL(siteUrl),
   title: {
     default: 'Romina Melul | Terapeuta Psicocorporal',
     template: '%s | Romina Melul',
   },
-  description:
-    'Terapia Psicocorporal Integradora - Reconecta con tu cuerpo, mente y espíritu. Masaje terapéutico y movimiento vital expresivo en Buenos Aires.',
+  description: siteDescription,
   keywords: [
     'terapia psicocorporal',
     'masaje terapéutico',
@@ -32,6 +37,7 @@ export const metadata: Metadata = {
     'terapeuta corporal',
     'sanación cuerpo-mente',
     'Barcelona',
+    'Costa Brava',
   ],
   authors: [{ name: 'Romina Melul' }],
   creator: 'Romina Melul',
@@ -50,26 +56,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'es_ES',
-    url: 'https://rominamelul.com',
+    url: siteUrl,
     siteName: 'Romina Melul',
     title: 'Romina Melul | Terapeuta Psicocorporal',
-    description:
-      'Terapia Psicocorporal Integradora - Reconecta con tu cuerpo, mente y espíritu.',
-    images: [
-      {
-        url: '/romina-logo2.svg',
-        width: 1200,
-        height: 630,
-        alt: 'Romina Melul - Terapeuta Psicocorporal',
-      },
-    ],
+    description: siteDescription,
+    images: [ogImage],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Romina Melul | Terapeuta Psicocorporal',
-    description:
-      'Terapia Psicocorporal Integradora - Reconecta con tu cuerpo, mente y espíritu.',
-    images: ['/romina-logo2.svg'],
+    description: siteDescription,
+    images: [ogImage.url],
     creator: '@rominamelul',
   },
 }
