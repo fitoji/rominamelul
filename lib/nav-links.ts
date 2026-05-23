@@ -4,6 +4,8 @@ export const navLinks = [
     { href: '#terapia', label: 'La Terapia' },
     { href: '#servicios', label: 'Servicios' },
     { href: '#videos', label: 'Videos' },
-    { href: '#filosofia', label: 'Filosofía' },
+  { href: '#filosofia', label: 'Filosofía' },
+  { href: '#testimonios', label: 'Testimonios' },
+    {href:'#orga', label: 'Organizaciones'},
     { href: '#contacto', label: 'Contacto' },
   ]
