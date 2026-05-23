@@ -6,6 +6,6 @@ export const navLinks = [
     { href: '#videos', label: 'Videos' },
   { href: '#filosofia', label: 'Filosofía' },
   { href: '#testimonios', label: 'Testimonios' },
-    {href:'#orga', label: 'Organizaciones'},
+    {href:'#organizations', label: 'Organizaciones'},
     { href: '#contacto', label: 'Contacto' },
   ]

@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import {
   Card,
@@ -6,35 +6,35 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card'
+} from "@/components/ui/card";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogTitle,
   DialogTrigger,
-} from '@/components/ui/dialog'
-import { Heart, Sparkles, User, Users } from 'lucide-react'
-import Image from 'next/image'
+} from "@/components/ui/dialog";
+import { Heart, Sparkles, User, Users } from "lucide-react";
+import Image from "next/image";
 
 type ServiceDetail = {
-  title: string
-  description: string
-  modality: string
-  icon: typeof User
-  image: string
-  fullDescription: string
-}
+  title: string;
+  description: string;
+  modality: string;
+  icon: typeof User;
+  image: string;
+  fullDescription: string;
+};
 
 export function Services() {
   const services: ServiceDetail[] = [
     {
-      title: 'Masaje Terapéutico',
+      title: "Masaje Esalen - Californiano",
       description:
-        'Ayuda a movilizar y flexibilizar trabas corporales que aprisionan y debilitan. Libera la energía retenida y recupera la fuerza y alegría de vivir.',
-      modality: 'Sesión Individual',
+        "Ayuda a movilizar y flexibilizar trabas corporales que aprisionan y debilitan. Libera la energía retenida y recupera la fuerza y alegría de vivir.",
+      modality: "Sesión Individual",
       icon: User,
-      image: '/images/romi-masajes.webp',
+      image: "/images/romi-masajes.webp",
       fullDescription: `Moviliza trayendo a la superficie trabas corporales que aprisionan y debilitan.
 Libera la energía vital retenida recuperando la fuerza y la alegría de vivir.
 
@@ -51,12 +51,12 @@ Nos enseña a vivir un estado de relajación natural y necesario, limpiando capa
 El trabajo es siempre en todo el cuerpo y me gusta decir que es una reorganización cuerpo-mente.`,
     },
     {
-      title: 'Trabajo sobre Sí',
+      title: "Trabajo sobre Sí",
       description:
-        'El hilo conductor de las distintas técnicas utilizadas en la terapia es el Trabajo sobre Sí, que reconoce el auto-conocimiento y la auto-transformación como poder sanador del ser humano.',
-      modality: 'Sesión Grupal',
+        "El hilo conductor de las distintas técnicas utilizadas en la terapia es el Trabajo sobre Sí, que reconoce el auto-conocimiento y la auto-transformación como poder sanador del ser humano.",
+      modality: "Sesión Grupal",
       icon: Users,
-      image: '/images/therapy-2.jpg',
+      image: "/images/therapy-2.jpg",
       fullDescription: `El Movimiento Vital Expresivo es una práctica que invita a reconectarte con tu cuerpo de manera profunda y transformadora.
 
 A través de la música, secuencias de movimiento, expresiones corporales y respiraciones conscientes, este trabajo facilita:
@@ -69,16 +69,16 @@ A través de la música, secuencias de movimiento, expresiones corporales y resp
 
 Es un espacio de exploración personal donde cada persona encuentra su propio ritmo y camino hacia el bienestar.`,
     },
-  ]
+  ];
 
   const complements = [
     {
-      title: 'Lectura Corporal',
+      title: "Lectura Corporal",
       description:
-        'Fundamento y técnicas para comprender los mensajes del cuerpo.',
-      image: '/icons8-body-64.png',
+        "Fundamento y técnicas para comprender los mensajes del cuerpo.",
+      image: "/icons8-body-64.png",
       icon: Heart,
-      heroImage: '/images/therapy-1.jpg',
+      heroImage: "/images/therapy-1.jpg",
       fullDescription: `Es un lenguaje que nos permite decodificar las señales del cuerpo en correspondencia con la mente, las emociones y las experiencias pasadas.
 
 Nos permite ver un mapa de nosotros mismos y nuestro posicionamiento en la vida hoy, de forma integral.
@@ -86,11 +86,11 @@ Nos permite ver un mapa de nosotros mismos y nuestro posicionamiento en la vida 
 En sí misma tiene una gran y variada propuesta en cuanto a terapéutica siguiendo la premisa de que la cura viene de la mano del disfrute y la alegría.`,
     },
     {
-      title: 'Yoga',
-      description: 'Práctica milenaria para el equilibrio cuerpo-mente.',
+      title: "Yoga",
+      description: "Práctica milenaria para el equilibrio cuerpo-mente.",
       icon: Sparkles,
-      image: '/icons8-yoga-64.png',
-      heroImage: '/images/romi-yoga02.webp',
+      image: "/icons8-yoga-64.png",
+      heroImage: "/images/romi-yoga02.webp",
       fullDescription: `He comprobado en mi experiencia personal y en la experiencia clínica en el consultorio que la práctica de Hatha Yoga junto con el massage mantienen el cuerpo-mente flexible, fuerte, elástico y adaptable al cambio. Este trabajo en conjunto potencia nuestra capacidad de manejar niveles de estrés con un estado vital, alegre y armónico.
 
 A su vez podemos comprobar con mayor rapidez cómo se corrigen posturas, se desarman vicios posturales y se concientiza la respiración.
@@ -98,11 +98,11 @@ A su vez podemos comprobar con mayor rapidez cómo se corrigen posturas, se desa
 También por sí sola, la práctica de Hatha Yoga es un gran aliado en la vida, que sumada al trabajo consciente con la TPI, resultan un dúoo muy provechoso.`,
     },
     {
-      title: 'Flores de Bach',
-      description: 'Terapia floral para el equilibrio emocional.',
+      title: "Flores de Bach",
+      description: "Terapia floral para el equilibrio emocional.",
       icon: Sparkles,
-      image: '/icons8-massage-oil-64.png',
-      heroImage: '/images/flores-de-bach-kit.webp',
+      image: "/icons8-massage-oil-64.png",
+      heroImage: "/images/flores-de-bach-kit.webp",
       fullDescription: `Las esencias florales representan virtudes que todos tenemos. En nuestra experiencia de vida podemos encontrarlas desarmonizadas, a veces por exceso o por desuso.
 
 En la entrevista preparamos una fórmula floral que equilibra de forma natural un desequilibrio de base emocional.
@@ -112,15 +112,23 @@ La terapia floral por si sola es una herramienta muy valiosa en la sanación de 
 Resultan muy efectivas tanto para las personas como para los mascotas.`,
     },
     {
-      title: 'Movimiento Vital Expresivo',
+      title: "Movimiento Vital Expresivo",
       description:
-        'Actividad lúdica, expresiva, creativa y terapéutica grupal.',
+        "Actividad lúdica, expresiva, creativa y terapéutica grupal.",
       icon: Sparkles,
-      image: '/icons8-dance-64.png',
-      heroImage: '/images/therapy-2.jpg',
+      image: "/icons8-dance-64.png",
+      heroImage: "/images/therapy-2.jpg",
       fullDescription: `Es una actividad lúdica, expresiva, creativa y terapéutica. Facilita el encuentro de la persona consigo misma y con los otros. Para ello utiliza la música, la secuencia de movimientos, las expresiones corporales, emocionales y la respiración.`,
     },
-  ]
+    {
+      title: "Embarazadas y Mamás ",
+      description: "Terapia especializada para embarazadas y mamás.",
+      icon: Sparkles,
+      image: "/icons8-dance-64.png",
+      heroImage: "/images/romi-masajes.webp",
+      fullDescription: `Trabajo especializado para embarazadas`,
+    },
+  ];
 
   return (
     <section id="servicios" className="py-24 bg-background">
@@ -154,10 +162,10 @@ Resultan muy efectivas tanto para las personas como para los mascotas.`,
                       className="object-cover"
                     />
                     <div className="absolute inset-0 bg-linear-to-t from-card/90 to-transparent" />
-                    <div className="absolute bottom-4 left-4 flex items-center gap-2 bg-primary/90 text-primary-foreground px-3 py-1 rounded-full text-sm">
+                    {/* <div className="absolute bottom-4 left-4 flex items-center gap-2 bg-primary/90 text-primary-foreground px-3 py-1 rounded-full text-sm">
                       <service.icon className="h-4 w-4" aria-hidden="true" />
                       {service.modality}
-                    </div>
+                    </div> */}
                   </div>
                   <CardHeader>
                     <CardTitle className="text-2xl text-foreground">
@@ -183,7 +191,7 @@ Resultan muy efectivas tanto para las personas como para los mascotas.`,
                     fill
                     className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-card via-card/50 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <DialogTitle className="text-3xl font-semibold text-foreground">
                       {service.title}
@@ -212,7 +220,7 @@ Resultan muy efectivas tanto para las personas como para los mascotas.`,
           <h3 className="text-2xl font-semibold text-foreground mb-8 text-center">
             Prácticas Complementarias
           </h3>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {complements.map((complement) => {
               // Flores de Bach tiene modal
               if (complement.fullDescription) {
@@ -222,7 +230,7 @@ Resultan muy efectivas tanto para las personas como para los mascotas.`,
                       <div className="text-center p-6 bg-card rounded-2xl shadow-md hover:shadow-lg transition-all cursor-pointer hover:scale-[1.02]">
                         <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
                           <Image
-                            src={complement.image || ''}
+                            src={complement.image || ""}
                             alt={complement.title}
                             width={32}
                             height={32}
@@ -243,12 +251,12 @@ Resultan muy efectivas tanto para las personas como para los mascotas.`,
                     <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto p-0 bg-card border-none rounded-2xl">
                       <div className="relative h-56 w-full">
                         <Image
-                          src={complement.heroImage || '/images/therapy-1.jpg'}
+                          src={complement.heroImage || "/images/therapy-1.jpg"}
                           alt={complement.title}
                           fill
                           className="object-cover"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
+                        <div className="absolute inset-0 bg-linear-to-t from-card via-card/50 to-transparent" />
                         <div className="absolute bottom-0 left-0 right-0 p-6">
                           <DialogTitle className="text-3xl font-semibold text-foreground">
                             {complement.title}
@@ -265,7 +273,7 @@ Resultan muy efectivas tanto para las personas como para los mascotas.`,
                       </div>
                     </DialogContent>
                   </Dialog>
-                )
+                );
               }
 
               // Los otros dos son cards simples
@@ -284,7 +292,10 @@ Resultan muy efectivas tanto para las personas como para los mascotas.`,
                         className="object-contain"
                       />
                     ) : (
-                      <complement.icon className="h-6 w-6 text-accent" aria-hidden="true" />
+                      <complement.icon
+                        className="h-6 w-6 text-accent"
+                        aria-hidden="true"
+                      />
                     )}
                   </div>
                   <h4 className="font-semibold text-foreground mb-2">
@@ -294,11 +305,11 @@ Resultan muy efectivas tanto para las personas como para los mascotas.`,
                     {complement.description}
                   </p>
                 </div>
-              )
+              );
             })}
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

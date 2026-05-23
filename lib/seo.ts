@@ -1,7 +1,7 @@
 export const siteUrl = 'https://rominamelul.com'
 
 export const siteDescription =
-  'Terapia Psicocorporal Integradora en Barcelona y Costa Brava. Masaje terapéutico y movimiento vital expresivo. Reconecta con tu cuerpo, mente y espíritu.'
+  'Terapia Psicocorporal Integradora en Barcelona y Costa Brava. Masaje terapéutico, californiano, esalen y movimiento vital expresivo. Reconecta con tu cuerpo, mente y espíritu.'
 
 export const ogImage = {
   url: '/images/logo.png',

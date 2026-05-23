@@ -1,23 +1,23 @@
-import Image from 'next/image'
+import Image from "next/image";
 
 export function About() {
   const purposes = [
     {
-      title: 'Reconocer',
+      title: "Reconocer",
       description:
-        'Reconocer y elaborar las trabas psicofísicas que mantienen a la persona aprisionada en conductas repetitivas o mecánicas.',
+        "Reconocer y elaborar las trabas psicofísicas que mantienen a la persona aprisionada en conductas repetitivas o mecánicas.",
     },
     {
-      title: 'Expresar',
+      title: "Expresar",
       description:
-        'Expresar y concienciar los aspectos no conducentes de la personalidad.',
+        "Expresar y concienciar los aspectos no conducentes de la personalidad.",
     },
     {
-      title: 'Conectar',
+      title: "Conectar",
       description:
-        'Contactar a la persona con su Yo profundo, desbloqueando su capacidad de armonización en todos los planos de la existencia.',
+        "Contactar a la persona con su Yo profundo, desbloqueando su capacidad de armonización en todos los planos de la existencia.",
     },
-  ]
+  ];
 
   return (
     <section id="terapia" className="py-24 bg-card">
@@ -45,37 +45,43 @@ export function About() {
               className="relative rounded-2xl shadow-xl object-cover w-full h-100"
             />
           </div> */}
-          
+
           <div className="relative group">
-  {/* Halo difuso de fondo */}
-  <div className="absolute -inset-6 bg-linear-to-tr from-primary/20 via-primary/5 to-transparent rounded-2rem blur-2xl opacity-70 group-hover:opacity-100 transition-opacity duration-700" />
+            {/* Halo difuso de fondo */}
+            <div className="absolute -inset-6 bg-linear-to-tr from-primary/20 via-primary/5 to-transparent rounded-2rem blur-2xl opacity-70 group-hover:opacity-100 transition-opacity duration-700" />
 
-  {/* Forma decorativa rotada */}
-  <div className="absolute -inset-4 bg-linear-to-br from-primary/15 to-primary/5 rounded-3xl transform -rotate-3 transition-transform duration-700 group-hover:-rotate-2" />
+            {/* Forma decorativa rotada */}
+            <div className="absolute -inset-4 bg-linear-to-br from-primary/15 to-primary/5 rounded-3xl transform -rotate-3 transition-transform duration-700 group-hover:-rotate-2" />
 
-  {/* Contenedor de la imagen */}
-  <div className="relative overflow-hidden rounded-2xl ring-1 ring-white/80 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.25)] transition-all duration-700 group-hover:shadow-[0_30px_80px_-20px_rgba(0,0,0,0.35)] group-hover:-translate-y-1">
-    <Image
-      src="/images/romi02-masajes.webp"
-      alt="Sesión de Terapia Psicocorporal"
-      width={600}
-      height={400}
-      className="object-cover w-full h-100 transition-transform duration-1200 ease-out group-hover:scale-105"
-    />
-    {/* Veladura sutil para dar profundidad */}
-    <div className="absolute inset-0 bg-linear-to-t from-accent/30 via-transparent to-slate-100/30 pointer-events-none" />
-  </div>
-</div>
+            {/* Contenedor de la imagen */}
+            <div className="relative overflow-hidden rounded-2xl ring-1 ring-white/80 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.25)] transition-all duration-700 group-hover:shadow-[0_30px_80px_-20px_rgba(0,0,0,0.35)] group-hover:-translate-y-1">
+              <Image
+                src="/images/romi02-masajes.webp"
+                alt="Sesión de Terapia Psicocorporal"
+                width={600}
+                height={400}
+                className="object-cover w-full h-100 transition-transform duration-1200 ease-out group-hover:scale-105"
+              />
+              {/* Veladura sutil para dar profundidad */}
+              <div className="absolute inset-0 bg-linear-to-t from-accent/30 via-transparent to-slate-100/30 pointer-events-none" />
+            </div>
+          </div>
 
           {/* Content */}
           <div className="space-y-8 order-1 lg:order-2">
             <p className="text-lg text-muted-foreground leading-relaxed">
-              La{' '}
+              La{" "}
               <strong className="text-foreground">
                 Terapia Psicocorporal Integradora (TPI)
-              </strong>{' '}
+              </strong>{" "}
               vincula el cuerpo físico (forma, síntomas, desórdenes) con los
               procesos emocionales, psíquicos y sensoriales del ser humano.
+              Utiliza diferentes técnicas de abordaje de las cuales el masaje es
+              uno de sus pilares, tomando el cuerpo como base del proceso de
+              transformación. Disolvemos tensiones y contracturas del día a día,
+              como así también vicios posturales antiguos. Corregimos posturas,
+              aprendemos nuevos posicionamientos de forma integrada y vital para
+              recuperar el bienestar y la armonía natural del ser humano.
             </p>
 
             <div className="space-y-6">
@@ -107,5 +113,5 @@ export function About() {
         </div>
       </div>
     </section>
-  )
+  );
 }
