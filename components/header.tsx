@@ -19,7 +19,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
             <Image
-              src="/romina-logo2.svg"
+              src="/images/romina-logo2-reduced.webp"
               alt="Romina Melul - Terapia Psicocorporal"
               width={50}
               height={50}

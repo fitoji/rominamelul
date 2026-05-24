@@ -26,7 +26,7 @@ export function Hero() {
               aria-hidden
             >
               <Image
-                src="/romina-logo2.svg"
+                src="/images/romina-logo2-reduced.webp"
                 alt=""
                 width={450}
                 height={450}
@@ -100,7 +100,7 @@ export function Hero() {
             <div className="hover-spin rounded-full transition-all duration-900">
               <div className="absolute inset-0 " />
               <Image
-                src="/romina-logo2.svg"
+                src="/images/romina-logo2-reduced.webp"
                 alt="Terapia Psicocorporal - Equilibrio y Armonía"
                 width={450}
                 height={450}

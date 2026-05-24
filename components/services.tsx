@@ -89,7 +89,7 @@ En sí misma tiene una gran y variada propuesta en cuanto a terapéutica siguien
       title: "Yoga",
       description: "Práctica milenaria para el equilibrio cuerpo-mente.",
       icon: Sparkles,
-      image: "/icons8-yoga-64.png",
+      image: "/q2-yoga.png",
       heroImage: "/images/romi-yoga02.webp",
       fullDescription: `He comprobado en mi experiencia personal y en la experiencia clínica en el consultorio que la práctica de Hatha Yoga junto con el massage mantienen el cuerpo-mente flexible, fuerte, elástico y adaptable al cambio. Este trabajo en conjunto potencia nuestra capacidad de manejar niveles de estrés con un estado vital, alegre y armónico.
 
@@ -124,8 +124,8 @@ Resultan muy efectivas tanto para las personas como para los mascotas.`,
       title: "Embarazadas y Mamás ",
       description: "Terapia especializada para embarazadas y mamás.",
       icon: Sparkles,
-      image: "/icons8-dance-64.png",
-      heroImage: "/images/romi-masajes.webp",
+      image: "/q1-emba.png",
+      heroImage: "/images/emba-mobile.webp",
       fullDescription: `Trabajo especializado para embarazadas`,
     },
   ];

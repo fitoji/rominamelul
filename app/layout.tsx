@@ -56,7 +56,7 @@ export const metadata: Metadata = {
         media: '(prefers-color-scheme: dark)',
       },
     ],
-    apple: '/images/logo.png',
+    apple: '/images/rom-1260.webp',
   },
   robots: {
     index: true,

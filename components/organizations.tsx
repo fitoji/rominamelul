@@ -13,20 +13,28 @@ import { Button } from "@/components/ui/button";
 
 const images = [
   {
-    src: "/images/org-1.jpg",
+    src: "/images/orga/01.webp",
     alt: "Taller de bienestar corporativo",
   },
   {
-    src: "/images/org-2.jpg",
+    src: "/images/orga/02.webp",
     alt: "Retiro de mindfulness para empresas",
   },
   {
-    src: "/images/org-3.jpg",
+    src: "/images/orga/03.webp",
     alt: "Seminario de gestión del estrés",
   },
   {
-    src: "/images/org-4.jpg",
+    src: "/images/orga/04.webp",
     alt: "Sesiones de masaje en oficina",
+  },
+  {
+    src: "/images/orga/05.webp",
+    alt: "Seminario de gestión del estrés",
+  },
+  {
+    src: "/images/orga/06.webp",
+    alt: "SSeminario de gestión del estrés",
   },
 ];
 

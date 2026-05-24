@@ -56,12 +56,12 @@ export const navLinks: NavItem[] = [
         href: "#videos",
         label: "Videos",
         description: "Contenido audiovisual gratuito",
-      },
-      {
-        href: "#testimonios",
-        label: "Testimonios",
-        description: "Experiencias de quienes ya confiaron",
-      },
+      }
+      // {
+      //   href: "#testimonios",
+      //   label: "Testimonios",
+      //   description: "Experiencias de quienes ya confiaron",
+      // },
     ],
   },
 ];

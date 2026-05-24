@@ -15,7 +15,7 @@ export function Footer() {
           {/* Logo & Name */}
           <div className="flex items-center gap-4 justify-center md:justify-start">
             <Image
-              src="/images/logo.png"
+              src="/images/romina-logo2-reduced.webp"
               alt="Romina Melul - Terapia Psicocorporal"
               width={60}
               height={60}

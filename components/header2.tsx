@@ -256,7 +256,7 @@ export function Header() {
           {/* ── Logo ── */}
           <Link href="#inicio" className="flex items-center gap-3">
             <Image
-              src="/romina-logo2.svg"
+              src="/images/romina-logo2-reduced.webp"
               alt="Romina Melul - Terapia Psicocorporal"
               width={50}
               height={50}
@@ -383,7 +383,7 @@ export function Header() {
                       className="flex min-w-0 flex-1 items-center gap-3"
                     >
                       <Image
-                        src="/romina-logo2.svg"
+                        src="/images/romina-logo2-reduced.webp"
                         alt=""
                         width={40}
                         height={40}

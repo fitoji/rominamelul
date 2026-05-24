@@ -5,7 +5,7 @@ export const navLinks = [
     { href: '#servicios', label: 'Servicios' },
     { href: '#videos', label: 'Videos' },
   { href: '#filosofia', label: 'Filosofía' },
-  { href: '#testimonios', label: 'Testimonios' },
+  //{ href: '#testimonios', label: 'Testimonios' },
     {href:'#organizations', label: 'Organizaciones'},
     { href: '#contacto', label: 'Contacto' },
   ]
