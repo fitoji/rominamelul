@@ -43,6 +43,11 @@ export const navLinks: NavItem[] = [
         description: "Sesiones personalizadas para tu bienestar",
       },
       {
+        href: "#regala",
+        label: "Regala un masaje",
+        description: "Sesiones personalizadas para un ser querido",
+      },
+      {
         href: "#organizations",
         label: "Organizaciones",
         description: "Programas de bienestar para equipos",

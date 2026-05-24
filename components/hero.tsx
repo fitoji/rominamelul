@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Gift } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
@@ -83,13 +83,24 @@ export function Hero() {
                 >
                   <Link href="#contacto">Agenda tu Sesión</Link>
                 </Button>
-                <Button
+                {/* <Button
                   asChild
                   variant="outline"
                   size="lg"
                   className="border-primary text-primary hover:bg-primary/10 px-8 py-6 text-lg"
                 >
                   <Link href="#sobre-mi">Conoce más</Link>
+                </Button> */}
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="border-accent text-accent hover:bg-accent/10 px-8 py-6 text-lg"
+                >
+                  <Link href="#regala">
+                    <Gift className="mr-2 h-5 w-5" />
+                    Regala un Masaje
+                  </Link>
                 </Button>
               </div>
             </div>
@@ -115,7 +126,7 @@ export function Hero() {
         {/* Scroll Indicator */}
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
           <Link
-            href="#sobre-mi"
+            href="#terapia"
             className="text-primary hover:text-primary/80 transition-colors"
             aria-label="Ir a Sobre Mí"
           >

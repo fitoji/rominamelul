@@ -2,6 +2,7 @@ import { About } from "@/components/about";
 import { AboutMe } from "@/components/about-me";
 import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
+import { GiftMassage } from "@/components/gift-massage";
 import { Header } from "@/components/header2";
 import { Hero } from "@/components/hero";
 import { Organizations } from "@/components/organizations";
@@ -18,6 +19,7 @@ export default function Home() {
       <Hero />
       <About />
       <Services />
+      <GiftMassage />
       <AboutMe />
       <Videos />
       <Philosophy />
