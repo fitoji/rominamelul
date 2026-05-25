@@ -17,12 +17,12 @@ export function Hero() {
       <div className="absolute top-20 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
       <div className="absolute bottom-20 left-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
 
-      <div className="container mx-auto px-6 pt-30 md:pt:20 lg:pt-1 relative z-10">
+      <div className="container mx-auto px-6 pt-30 md:pt:20 lg:pt-1 pb-24 md:pb-16 lg:pb-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div className="relative overflow-hidden text-center lg:text-left">
             <div
-              className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center opacity-[0.12]"
+              className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center opacity-[0.2]"
               aria-hidden
             >
               <Image
