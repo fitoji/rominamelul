@@ -19,12 +19,13 @@ export default function Home() {
       <Hero />
       <About />
       <Services />
-      <GiftMassage />
+      
       <AboutMe />
       <Videos />
       <Philosophy />
       {/* <Testimonials /> */}
       <Organizations />
+      <GiftMassage />
       <Contact />
       <Footer />
     </main>

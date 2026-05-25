@@ -58,23 +58,25 @@ export function GiftMassage() {
 
   return (
     <section id="regala" className="py-24 relative overflow-hidden">
-      {/* Background Images Grid */}
+      {/* Background Images Grid — softened with blur */}
       <div className="absolute inset-0 grid grid-cols-1 md:grid-cols-3">
         {backgroundImages.map((img, index) => (
-          <div key={index} className="relative h-full">
-            <Image
-              src={img}
-              alt=""
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 33vw"
-            />
+          <div key={index} className="relative h-full overflow-hidden">
+            <div className="absolute inset-0 scale-105">
+              <Image
+                src={img}
+                alt=""
+                fill
+                className="object-cover blur-sm"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+            </div>
           </div>
         ))}
       </div>
 
-      {/* Overlay for readability */}
-      <div className="absolute inset-0 bg-linera-to-b from-background/95 via-background/90 to-background/95" />
+      {/* Overlay — softer now that blur does part of the work */}
+      <div className="absolute inset-0 bg-linear-to-b from-background/80 via-background/75 to-background/80" />
 
       {/* Decorative Elements */}
       <div className="absolute top-20 left-10 w-64 h-64 bg-accent/20 rounded-full blur-3xl" />
@@ -137,7 +139,7 @@ export function GiftMassage() {
             <div className="space-y-4">
               <div className="relative h-48 rounded-2xl overflow-hidden shadow-xl">
                 <Image
-                  src="/images/gift-bg-1.jpg"
+                  src="/images/romi02-masajes.webp"
                   alt="Masaje relajante"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-500"
@@ -163,7 +165,7 @@ export function GiftMassage() {
               </div>
               <div className="relative h-48 rounded-2xl overflow-hidden shadow-xl">
                 <Image
-                  src="/images/therapy-1.jpg"
+                  src="/images/romi-masajes.webp"
                   alt="Terapia corporal"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-500"
