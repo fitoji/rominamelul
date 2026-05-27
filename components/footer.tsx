@@ -2,6 +2,7 @@ import { navLinks } from '@/lib/nav-links'
 import { Heart } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { GiftAccessButton } from '@/components/gift-access-button'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -42,6 +43,7 @@ export function Footer() {
                 {link.label}
               </Link>
             ))}
+            <GiftAccessButton />
           </nav>
 
           {/* Contact Info */}
