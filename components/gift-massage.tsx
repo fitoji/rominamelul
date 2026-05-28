@@ -66,6 +66,7 @@ export function GiftMassage() {
               <Image
                 src={img}
                 alt=""
+                aria-hidden="true"
                 fill
                 className="object-cover blur-sm"
                 sizes="(max-width: 768px) 100vw, 33vw"
@@ -142,7 +143,9 @@ export function GiftMassage() {
                   src="/images/romi02-masajes.webp"
                   alt="Masaje relajante"
                   fill
+                  sizes="(max-width: 768px) 100vw, 25vw"
                   className="object-cover hover:scale-105 transition-transform duration-500"
+                  style={{ willChange: 'transform' }}
                 />
               </div>
               <div className="relative h-64 rounded-2xl overflow-hidden shadow-xl">
@@ -150,7 +153,9 @@ export function GiftMassage() {
                   src="/images/gift-bg-2.jpg"
                   alt="Costa Brava paisaje"
                   fill
+                  sizes="(max-width: 768px) 100vw, 25vw"
                   className="object-cover hover:scale-105 transition-transform duration-500"
+                  style={{ willChange: 'transform' }}
                 />
               </div>
             </div>
@@ -160,7 +165,9 @@ export function GiftMassage() {
                   src="/images/gift-bg-3.jpg"
                   alt="Spa wellness"
                   fill
+                  sizes="(max-width: 768px) 100vw, 25vw"
                   className="object-cover hover:scale-105 transition-transform duration-500"
+                  style={{ willChange: 'transform' }}
                 />
               </div>
               <div className="relative h-48 rounded-2xl overflow-hidden shadow-xl">
@@ -168,7 +175,9 @@ export function GiftMassage() {
                   src="/images/romi-masajes.webp"
                   alt="Terapia corporal"
                   fill
+                  sizes="(max-width: 768px) 100vw, 25vw"
                   className="object-cover hover:scale-105 transition-transform duration-500"
+                  style={{ willChange: 'transform' }}
                 />
               </div>
             </div>
