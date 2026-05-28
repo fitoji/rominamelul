@@ -345,10 +345,10 @@ export function Header() {
                 "transition-all duration-150",
               )}
             >
-              <a href="/CV_ROMINAMELUL..pdf" download>
+              <Link href="/CV_ROMINAMELUL..pdf" download>
                 <Download className="mr-1.5 size-4" aria-hidden="true" />
                 CV
-              </a>
+              </Link>
             </Button>
 
             {/* CTA */}
@@ -471,10 +471,10 @@ export function Header() {
                         "transition-all duration-150",
                       )}
                     >
-                      <a href="/CV_ROMINAMELUL..pdf" download>
+                      <Link href="/CV_ROMINAMELUL..pdf" download>
                         <Download className="mr-2 size-4" aria-hidden="true" />
                         Descargar CV
-                      </a>
+                      </Link>
                     </Button>
                   </SheetClose>
                   <SheetClose asChild>

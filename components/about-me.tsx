@@ -1,5 +1,6 @@
 import { Download } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 
 export function AboutMe() {
@@ -91,10 +92,10 @@ export function AboutMe() {
                   variant="outline"
                   className="border-primary/30 text-primary hover:bg-primary/10"
                 >
-                  <a href="/CV_ROMINAMELUL..pdf" download>
+                  <Link href="/CV_ROMINAMELUL..pdf" download>
                     <Download className="mr-2 h-4 w-4" aria-hidden="true" />
                     Descargar CV
-                  </a>
+                  </Link>
                 </Button>
               </div>
             </div>
