@@ -153,7 +153,11 @@ Resultan muy efectivas tanto para las personas como para los mascotas.`,
           {services.map((service) => (
             <Dialog key={service.title}>
               <DialogTrigger asChild>
-                <Card className="overflow-hidden border-none shadow-xl hover:shadow-2xl transition-all duration-300 bg-card cursor-pointer hover:scale-[1.02]">
+                <button
+                  type="button"
+                  className="w-full text-left overflow-hidden border-none shadow-xl hover:shadow-2xl transition-all duration-300 bg-card hover:scale-[1.02] rounded-xl cursor-pointer focus-visible:ring-2 focus-visible:ring-primary/20"
+                  aria-label={`Ver detalles de ${service.title}`}
+                >
                   <div className="relative h-64">
                     <Image
                       src={service.image}
@@ -163,10 +167,6 @@ Resultan muy efectivas tanto para las personas como para los mascotas.`,
                       className="object-cover"
                     />
                     <div className="absolute inset-0 bg-linear-to-t from-card/90 to-transparent" />
-                    {/* <div className="absolute bottom-4 left-4 flex items-center gap-2 bg-primary/90 text-primary-foreground px-3 py-1 rounded-full text-sm">
-                      <service.icon className="h-4 w-4" aria-hidden="true" />
-                      {service.modality}
-                    </div> */}
                   </div>
                   <CardHeader>
                     <CardTitle className="text-2xl text-foreground">
@@ -181,7 +181,7 @@ Resultan muy efectivas tanto para las personas como para los mascotas.`,
                       Clic para ver más información →
                     </p>
                   </CardContent>
-                </Card>
+                </button>
               </DialogTrigger>
               <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto p-0 bg-card border-none rounded-2xl">
                 {/* Hero Image */}
@@ -229,7 +229,11 @@ Resultan muy efectivas tanto para las personas como para los mascotas.`,
                 return (
                   <Dialog key={complement.title}>
                     <DialogTrigger asChild>
-                      <div className="text-center p-6 bg-card rounded-2xl shadow-md hover:shadow-lg transition-all cursor-pointer hover:scale-[1.02]">
+                      <button
+                        type="button"
+                        className="w-full text-center p-6 bg-card rounded-2xl shadow-md hover:shadow-lg transition-all hover:scale-[1.02] cursor-pointer focus-visible:ring-2 focus-visible:ring-primary/20"
+                        aria-label={`Ver detalles de ${complement.title}`}
+                      >
                         <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
                           <Image
                             src={complement.image || ""}
@@ -249,7 +253,7 @@ Resultan muy efectivas tanto para las personas como para los mascotas.`,
                         <p className="text-xs text-primary mt-3 font-medium">
                           Clic para ver más →
                         </p>
-                      </div>
+                      </button>
                     </DialogTrigger>
                     <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto p-0 bg-card border-none rounded-2xl">
                       <div className="relative h-56 w-full">
