@@ -159,6 +159,7 @@ Resultan muy efectivas tanto para las personas como para los mascotas.`,
                       src={service.image}
                       alt={service.title}
                       fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
                       className="object-cover"
                     />
                     <div className="absolute inset-0 bg-linear-to-t from-card/90 to-transparent" />
@@ -189,6 +190,7 @@ Resultan muy efectivas tanto para las personas como para los mascotas.`,
                     src={service.image}
                     alt={service.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover"
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-card via-card/50 to-transparent" />
@@ -234,6 +236,7 @@ Resultan muy efectivas tanto para las personas como para los mascotas.`,
                             alt={complement.title}
                             width={32}
                             height={32}
+                            sizes="32px"
                             className="object-contain"
                           />
                         </div>
@@ -254,6 +257,7 @@ Resultan muy efectivas tanto para las personas como para los mascotas.`,
                           src={complement.heroImage || "/images/therapy-1.jpg"}
                           alt={complement.title}
                           fill
+                          sizes="(max-width: 768px) 100vw, 50vw"
                           className="object-cover"
                         />
                         <div className="absolute inset-0 bg-linear-to-t from-card via-card/50 to-transparent" />
@@ -289,6 +293,7 @@ Resultan muy efectivas tanto para las personas como para los mascotas.`,
                         alt={complement.title}
                         width={32}
                         height={32}
+                        sizes="32px"
                         className="object-contain"
                       />
                     ) : (
