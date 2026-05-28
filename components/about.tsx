@@ -60,7 +60,8 @@ export function About() {
                 alt="Sesión de Terapia Psicocorporal"
                 width={600}
                 height={400}
-                className="object-cover w-full h-100 transition-transform duration-1200 ease-out group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover w-full h-full transition-transform duration-1200 ease-out group-hover:scale-105"
               />
               {/* Veladura sutil para dar profundidad */}
               <div className="absolute inset-0 bg-linear-to-t from-accent/30 via-transparent to-slate-100/30 pointer-events-none" />
