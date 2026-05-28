@@ -24,7 +24,7 @@ export const organizationStructuredData = {
   },
   areaServed: ['Barcelona', 'Costa Brava'],
   url: siteUrl,
-  telephone: '+34326327361',
+  telephone: '+34 688 807 366',
   priceRange: '€€',
 }
 
