@@ -40,7 +40,8 @@ export function Contact() {
         (
           <img
             src="/icons8-whatsapp-100.png"
-            alt="WhatsApp"
+            alt=""
+            aria-hidden="true"
             className="h-16 w-16"
           />
         ) as ReactNode,
@@ -129,11 +130,13 @@ export function Contact() {
                       target={
                         method.href.startsWith('http') ? '_blank' : undefined
                       }
+                      aria-label={method.buttonText}
                     >
                       {method.isCustomIcon ? (
                         <img
                           src="/icons8-whatsapp-100.png"
-                          alt="WhatsApp"
+                          alt=""
+                          aria-hidden="true"
                           className="h-12 w-12 mr-2"
                         />
                       ) : (
