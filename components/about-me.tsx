@@ -85,16 +85,18 @@ export function AboutMe() {
               </div>
 
               {/* Descargar CV */}
-              <Button
-                asChild
-                variant="outline"
-                className="border-primary/30 text-primary hover:bg-primary/10"
-              >
-                <a href="/CV_ROMINAMELUL..pdf" download>
-                  <Download className="mr-2 h-4 w-4" aria-hidden="true" />
-                  Descargar CV
-                </a>
-              </Button>
+              <div className="flex justify-end">
+                <Button
+                  asChild
+                  variant="outline"
+                  className="border-primary/30 text-primary hover:bg-primary/10"
+                >
+                  <a href="/CV_ROMINAMELUL..pdf" download>
+                    <Download className="mr-2 h-4 w-4" aria-hidden="true" />
+                    Descargar CV
+                  </a>
+                </Button>
+              </div>
             </div>
           </div>
 
