@@ -4,6 +4,7 @@ type NavChild = {
   href: string;
   label: string;
   description?: string;
+  download?: boolean;
 };
 
 export type NavItem = {
@@ -61,7 +62,13 @@ export const navLinks: NavItem[] = [
         href: "#videos",
         label: "Videos",
         description: "Contenido audiovisual gratuito",
-      }
+      },
+      {
+        href: "/CV_ROMINAMELUL..pdf",
+        label: "Descargar CV",
+        description: "Mi CV profesional en PDF",
+        download: true,
+      },
       // {
       //   href: "#testimonios",
       //   label: "Testimonios",

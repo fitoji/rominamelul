@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { ChevronDown, Download, Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
@@ -99,17 +99,20 @@ function NavListItem({
   label,
   description,
   isActive,
+  download,
 }: {
   href: string;
   label: string;
   description?: string;
   isActive?: boolean;
+  download?: boolean;
 }) {
   return (
     <li>
       <NavigationMenuLink asChild>
         <Link
           href={href}
+          {...(download ? { download: true } : {})}
           className={cn(
             "group flex select-none flex-col gap-1 p-3",
             "text-sm leading-none no-underline",
@@ -195,6 +198,7 @@ function MobileSection({
               <SheetClose asChild>
                 <Link
                   href={child.href}
+                  {...(child.download ? { download: true } : {})}
                   className={cn(
                     "group flex flex-col gap-0.5 px-3 py-2.5",
                     "text-sm active:scale-[0.98]",
@@ -333,24 +337,6 @@ export function Header() {
 
             <Separator orientation="vertical" className="mx-2 h-5" />
 
-            {/* Descargar CV */}
-            <Button
-              asChild
-              variant="ghost"
-              size="sm"
-              className={cn(
-                "rounded-xl text-muted-foreground",
-                "hover:bg-primary/10 hover:text-foreground",
-                "active:scale-[0.97]",
-                "transition-all duration-150",
-              )}
-            >
-              <Link href="/CV_ROMINAMELUL..pdf" download>
-                <Download className="mr-1.5 size-4" aria-hidden="true" />
-                CV
-              </Link>
-            </Button>
-
             {/* CTA */}
             <Button
               asChild
@@ -460,23 +446,7 @@ export function Header() {
                 </nav>
 
                 {/* Sheet footer CTA */}
-                <div className="border-t bg-background p-4 space-y-2">
-                  <SheetClose asChild>
-                    <Button
-                      asChild
-                      variant="outline"
-                      className={cn(
-                        "w-full rounded-xl border-primary/30 text-primary",
-                        "hover:bg-primary/10 active:scale-[0.97]",
-                        "transition-all duration-150",
-                      )}
-                    >
-                      <Link href="/CV_ROMINAMELUL..pdf" download>
-                        <Download className="mr-2 size-4" aria-hidden="true" />
-                        Descargar CV
-                      </Link>
-                    </Button>
-                  </SheetClose>
+                <div className="border-t bg-background p-4">
                   <SheetClose asChild>
                     <Button
                       asChild
