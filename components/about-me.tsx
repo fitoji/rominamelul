@@ -29,9 +29,10 @@ export function AboutMe() {
               <div className="absolute -inset-4 bg-primary/10 rounded-3xl transform -rotate-3" />
               <div className="relative aspect-3/4 rounded-2xl overflow-hidden shadow-xl">
                 <Image
-                  src="/images/romi01.webp"
+                  src="/images/romi-perfi02-l26.webp"
                   alt="Romina Claudia Melul - Terapeuta Psicocorporal"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 33vw"
                   className="object-cover"
                 />
               </div>
