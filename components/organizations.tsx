@@ -80,10 +80,30 @@ export function Organizations() {
   }, []);
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    let interval: NodeJS.Timeout;
+
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === "visible") {
+        interval = setInterval(() => {
+          setCurrentIndex((prev) => (prev + 1) % images.length);
+        }, 4000);
+      } else {
+        clearInterval(interval);
+      }
+    };
+
+    // Start initial interval
+    interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
     }, 4000);
-    return () => clearInterval(interval);
+
+    // Listen for visibility changes
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    return () => {
+      clearInterval(interval);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
   }, []);
 
   const nextSlide = () => {
@@ -139,6 +159,7 @@ export function Organizations() {
                     src={image.src}
                     alt={image.alt}
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover"
                   />
                 </div>
@@ -152,6 +173,7 @@ export function Organizations() {
                 variant="ghost"
                 size="icon"
                 onClick={prevSlide}
+                aria-label="Imagen anterior"
                 className="absolute left-4 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background text-foreground rounded-full shadow-lg backdrop-blur-sm"
               >
                 <ChevronLeft className="h-5 w-5" />
@@ -160,6 +182,7 @@ export function Organizations() {
                 variant="ghost"
                 size="icon"
                 onClick={nextSlide}
+                aria-label="Imagen siguiente"
                 className="absolute right-4 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background text-foreground rounded-full shadow-lg backdrop-blur-sm"
               >
                 <ChevronRight className="h-5 w-5" />
@@ -171,6 +194,7 @@ export function Organizations() {
                   <button
                     key={index}
                     onClick={() => setCurrentIndex(index)}
+                    aria-label={`Ir a imagen ${index + 1} de ${images.length}`}
                     className={`w-2 h-2 rounded-full transition-all duration-300 ${
                       index === currentIndex
                         ? "bg-white w-6"
