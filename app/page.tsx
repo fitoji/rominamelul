@@ -3,7 +3,7 @@ import { AboutMe } from "@/components/about-me";
 import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
 import { GiftMassage } from "@/components/gift-massage";
-import { Header } from "@/components/header2";
+import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
 import { Organizations } from "@/components/organizations";
 import { Philosophy } from "@/components/philosophy";
