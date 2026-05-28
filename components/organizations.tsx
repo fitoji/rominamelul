@@ -59,8 +59,24 @@ const benefits = [
 
 export function Organizations() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [nextIndex, setNextIndex] = useState<number | null>(null);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+
+  const goToSlide = (index: number) => {
+    if (isTransitioning || index === currentIndex) return;
+    setNextIndex(index);
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentIndex(index);
+      setNextIndex(null);
+      setIsTransitioning(false);
+    }, 400);
+  };
+
+  const nextSlide = () => goToSlide((currentIndex + 1) % images.length);
+  const prevSlide = () => goToSlide((currentIndex - 1 + images.length) % images.length);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -85,7 +101,7 @@ export function Organizations() {
     const handleVisibilityChange = () => {
       if (document.visibilityState === "visible") {
         interval = setInterval(() => {
-          setCurrentIndex((prev) => (prev + 1) % images.length);
+          goToSlide((currentIndex + 1) % images.length);
         }, 4000);
       } else {
         clearInterval(interval);
@@ -94,7 +110,7 @@ export function Organizations() {
 
     // Start initial interval
     interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % images.length);
+      goToSlide((currentIndex + 1) % images.length);
     }, 4000);
 
     // Listen for visibility changes
@@ -104,15 +120,7 @@ export function Organizations() {
       clearInterval(interval);
       document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
-  }, []);
-
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % images.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
-  };
+  }, [currentIndex, isTransitioning]);
 
   return (
     <section
@@ -146,24 +154,33 @@ export function Organizations() {
             }`}
           >
             <div className="relative aspect-4/3 rounded-2xl overflow-hidden shadow-2xl">
-              {images.map((image, index) => (
-                <div
-                  key={index}
-                  className={`absolute inset-0 transition-all duration-700 ${
-                    index === currentIndex
-                      ? "opacity-100 scale-100"
-                      : "opacity-0 scale-105"
-                  }`}
-                >
+              {/* Current slide (fading out) */}
+              <div
+                className={`absolute inset-0 transition-opacity duration-400 ${
+                  isTransitioning ? "opacity-0" : "opacity-100"
+                }`}
+              >
+                <Image
+                  src={images[currentIndex].src}
+                  alt={images[currentIndex].alt}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+
+              {/* Next slide (fading in) */}
+              {nextIndex !== null && (
+                <div className="absolute inset-0 transition-opacity duration-400 opacity-100">
                   <Image
-                    src={image.src}
-                    alt={image.alt}
+                    src={images[nextIndex].src}
+                    alt={images[nextIndex].alt}
                     fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover"
                   />
                 </div>
-              ))}
+              )}
 
               {/* Overlay gradient */}
               <div className="absolute inset-0 bg-linear-to-t from-foreground/30 to-transparent" />
@@ -193,7 +210,7 @@ export function Organizations() {
                 {images.map((_, index) => (
                   <button
                     key={index}
-                    onClick={() => setCurrentIndex(index)}
+                    onClick={() => goToSlide(index)}
                     aria-label={`Ir a imagen ${index + 1} de ${images.length}`}
                     className={`w-2 h-2 rounded-full transition-all duration-300 ${
                       index === currentIndex
