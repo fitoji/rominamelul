@@ -1,10 +1,57 @@
 "use client"
 
+import { useState } from "react"
+import Image from "next/image"
 import { Play } from "lucide-react"
 import Link from "next/link"
 
+type Playlist = {
+  title: string
+  description: string
+  playlistId: string
+}
+
+function YouTubeFacade({ playlist }: { playlist: Playlist }) {
+  const [isLoaded, setIsLoaded] = useState(false)
+  const thumbnailUrl = `https://img.youtube.com/vi/${playlist.playlistId}/maxresdefault.jpg`
+
+  if (isLoaded) {
+    return (
+      <iframe
+        src={`https://www.youtube.com/embed?listType=playlist&list=${playlist.playlistId}&rel=0`}
+        title={`Videos de ${playlist.title} - Playlist de Romina Melul`}
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+        className="w-full h-full"
+      />
+    )
+  }
+
+  return (
+    <button
+      onClick={() => setIsLoaded(true)}
+      className="relative w-full h-full group cursor-pointer"
+      aria-label={`Reproducir playlist de ${playlist.title}`}
+    >
+      <Image
+        src={thumbnailUrl}
+        alt={`Thumbnail de ${playlist.title}`}
+        fill
+        sizes="(max-width: 768px) 100vw, 50vw"
+        className="object-cover"
+      />
+      <div className="absolute inset-0 bg-foreground/20 group-hover:bg-foreground/30 transition-colors" />
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="w-16 h-16 bg-primary/90 rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
+          <Play className="w-8 h-8 text-primary-foreground fill-primary-foreground ml-1" />
+        </div>
+      </div>
+    </button>
+  )
+}
+
 export function Videos() {
-  const playlists = [
+  const playlists: Playlist[] = [
     {
       title: "Yoga",
       description: "Prácticas de Hatha Yoga para el equilibrio físico, mental y energético.",
@@ -46,13 +93,7 @@ export function Videos() {
             >
               {/* Video Embed */}
               <div className="aspect-video w-full">
-                <iframe
-                  src={`https://www.youtube.com/embed?listType=playlist&list=${playlist.playlistId}&rel=0`}
-                  title={playlist.title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                  className="w-full h-full"
-                />
+                <YouTubeFacade playlist={playlist} />
               </div>
               
               {/* Playlist Info */}
