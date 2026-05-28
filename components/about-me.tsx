@@ -93,7 +93,7 @@ export function AboutMe() {
                   variant="outline"
                   className="border-primary/30 text-primary hover:bg-primary/10"
                 >
-                  <Link href="/CV_ROMINAMELUL..pdf" download>
+                  <Link href="/CV_ROMINAMELUL.pdf" download aria-label="Descargar CV de Romina Melul (PDF)">
                     <Download className="mr-2 h-4 w-4" aria-hidden="true" />
                     Descargar CV
                   </Link>
