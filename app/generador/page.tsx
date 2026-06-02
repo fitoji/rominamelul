@@ -60,6 +60,9 @@ const BACKGROUNDS = [
   { id: "lavender", label: "Lavanda" },
   { id: "ocean", label: "Océano" },
   { id: "manteca", label: "Manteca" },
+  { id: "blanco", label: "Blanco" },
+  { id: "cielo", label: "Cielo" },
+  { id: "coral", label: "Coral" },
 ];
 
 interface FormValues {
@@ -322,7 +325,7 @@ export default function GeneradorTargetas() {
                           style={{ background: `var(--bg-${bg.id})` }}
                           aria-label={bg.label}
                         >
-                          <span className="absolute bottom-1 left-0 right-0 text-[10px] text-white drop-shadow font-medium">
+                          <span className="absolute bottom-1 left-0 right-0 text-[10px] text-white drop-shadow font-medium mix-blend-difference">
                             {bg.label}
                           </span>
                         </button>

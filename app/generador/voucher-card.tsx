@@ -44,7 +44,7 @@ export const VoucherCard = forwardRef<HTMLDivElement, Props>(
       return () => observer.disconnect();
     }, []);
     const isDark =
-      isSiteDark ||
+      (isSiteDark && data.background !== "blanco") ||
       data.background === "noir" ||
       data.background === "ocean";
     const textColor = isDark ? "oklch(0.98 0.01 80)" : "oklch(0.2 0.02 30)";
