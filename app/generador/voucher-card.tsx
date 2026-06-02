@@ -22,6 +22,7 @@ export interface VoucherData {
   mensaje?: string;
   fecha: Date;
   background: string;
+  showCartoon?: boolean;
 }
 
 interface Props {
@@ -64,14 +65,16 @@ export const VoucherCard = forwardRef<HTMLDivElement, Props>(
           }}
         />
 
-        <Image
-          src="/images/cartoon-massage.svg"
-          alt=""
-          width={130}
-          height={101}
-          aria-hidden="true"
-          className="absolute bottom-3 right-3 opacity-60 pointer-events-none select-none"
-        />
+        {data.showCartoon !== false && (
+          <Image
+            src="/images/cartoon-massage.svg"
+            alt=""
+            width={130}
+            height={101}
+            aria-hidden="true"
+            className="absolute top-3 right-3 opacity-60 pointer-events-none select-none"
+          />
+        )}
 
         <div className="relative text-center">
           <p

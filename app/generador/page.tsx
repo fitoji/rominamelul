@@ -17,6 +17,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Calendar } from "@/components/ui/calendar";
 import {
   Popover,
@@ -72,6 +73,7 @@ interface FormValues {
   tipo: Tipo;
   mensaje: string;
   fecha: Date;
+  showCartoon: boolean;
 }
 
 export default function GeneradorTargetas() {
@@ -87,6 +89,7 @@ export default function GeneradorTargetas() {
       tipo: "uno",
       mensaje: "",
       fecha: new Date(),
+      showCartoon: true,
     },
   });
 
@@ -99,6 +102,7 @@ export default function GeneradorTargetas() {
     mensaje: values.mensaje || undefined,
     fecha: values.fecha ?? new Date(),
     background,
+    showCartoon: values.showCartoon,
   };
 
   const handleDownload = async () => {
@@ -304,6 +308,27 @@ export default function GeneradorTargetas() {
                           </PopoverContent>
                         </Popover>
                         <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="showCartoon"
+                    render={({ field }) => (
+                      <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
+                        <FormControl>
+                          <Checkbox
+                            checked={field.value}
+                            onCheckedChange={field.onChange}
+                          />
+                        </FormControl>
+                        <div className="space-y-1 leading-none">
+                          <FormLabel>Mostrar ilustración</FormLabel>
+                          <p className="text-sm text-muted-foreground">
+                            Decorá el vale con el cartoon de masaje
+                          </p>
+                        </div>
                       </FormItem>
                     )}
                   />
