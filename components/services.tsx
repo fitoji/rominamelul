@@ -54,8 +54,6 @@ El trabajo es siempre en todo el cuerpo y me gusta decir que es una reorganizaci
       title: "Trabajo sobre Sí",
       description:
         "El hilo conductor de las distintas técnicas utilizadas en la terapia es el Trabajo sobre Sí, que reconoce el auto-conocimiento y la auto-transformación como poder sanador del ser humano.",
-      modality: "Sesión Grupal",
-      icon: Users,
       image: "/images/therapy-2.jpg",
       fullDescription: `El hilo conductor de las distintas técnicas utilizadas en la terapia es el "Trabajo sobre Sí". Es un espacio de charla que nos permite poner palabra al lenguaje del cuerpo y al proceso de conexión con nuestras emociones y nuestra conducta.  Nos permite ese espacio de claridad en el paso a paso de nuestro auto-conocimiento y la auto-transformación valorando estos últimos como poder sanador del ser humano. Aceptar que el dolor y los síntomas es la forma en que nuestra inteligencia usa para que nos escuchemos, nos respetemos y actuemos de acuerdo a nuestro sentir. Entendiendo “el sentir” como una inteligencia sensible que ya incorporó la razón.`,
     },
@@ -68,7 +66,7 @@ El trabajo es siempre en todo el cuerpo y me gusta decir que es una reorganizaci
         "Fundamento y técnicas para comprender los mensajes del cuerpo.",
       image: "/icons8-body-64.png",
       icon: Heart,
-      heroImage: "/images/therapy-1.jpg",
+      heroImage: "/images/lectura-corporal.webp",
       fullDescription: `Es un lenguaje que nos permite decodificar las señales del cuerpo en correspondencia con la mente, las emociones y las experiencias pasadas.
 
 Nos permite ver un mapa de nosotros mismos y nuestro posicionamiento en la vida hoy, de forma integral.

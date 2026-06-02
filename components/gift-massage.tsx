@@ -27,15 +27,14 @@ const steps = [
   },
   {
     icon: Calendar,
-    title: "3. Elige la fecha",
-    description:
-      "Coordinamos juntos la fecha y hora ideal para la sesión, adaptándonos a la disponibilidad del destinatario.",
+    title: "3. Sobre la fecha",
+    description: "Tendrás un vale poder usarlo dentro de un año.",
   },
   {
     icon: MapPin,
     title: "4. Define el lugar",
     description:
-      "El masaje se realiza a domicilio. Indicame la dirección donde se llevará a cabo la sesión (Barcelona o Costa Brava).",
+      "El masaje se podrá realizar a domicilio o en el consultorio de Barcelona.",
   },
   {
     icon: CreditCard,
@@ -145,7 +144,7 @@ export function GiftMassage() {
                   fill
                   sizes="(max-width: 768px) 100vw, 25vw"
                   className="object-cover hover:scale-105 transition-transform duration-500"
-                  style={{ willChange: 'transform' }}
+                  style={{ willChange: "transform" }}
                 />
               </div>
               <div className="relative h-64 rounded-2xl overflow-hidden shadow-xl">
@@ -155,7 +154,7 @@ export function GiftMassage() {
                   fill
                   sizes="(max-width: 768px) 100vw, 25vw"
                   className="object-cover hover:scale-105 transition-transform duration-500"
-                  style={{ willChange: 'transform' }}
+                  style={{ willChange: "transform" }}
                 />
               </div>
             </div>
@@ -167,7 +166,7 @@ export function GiftMassage() {
                   fill
                   sizes="(max-width: 768px) 100vw, 25vw"
                   className="object-cover hover:scale-105 transition-transform duration-500"
-                  style={{ willChange: 'transform' }}
+                  style={{ willChange: "transform" }}
                 />
               </div>
               <div className="relative h-48 rounded-2xl overflow-hidden shadow-xl">
@@ -177,7 +176,7 @@ export function GiftMassage() {
                   fill
                   sizes="(max-width: 768px) 100vw, 25vw"
                   className="object-cover hover:scale-105 transition-transform duration-500"
-                  style={{ willChange: 'transform' }}
+                  style={{ willChange: "transform" }}
                 />
               </div>
             </div>
@@ -187,7 +186,10 @@ export function GiftMassage() {
         {/* CTA */}
         <div className="text-center">
           <div className="bg-card/95 backdrop-blur-sm rounded-3xl p-8 sm:p-12 shadow-xl border border-border max-w-2xl mx-auto hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]">
-            <Gift className="h-12 w-12 text-accent mx-auto mb-6" aria-hidden="true" />
+            <Gift
+              className="h-12 w-12 text-accent mx-auto mb-6"
+              aria-hidden="true"
+            />
             <h3 className="text-2xl sm:text-3xl font-semibold text-foreground mb-4">
               Haz feliz a alguien especial
             </h3>
