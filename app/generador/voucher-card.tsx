@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { forwardRef } from "react";
+import { forwardRef, useEffect, useState } from "react";
 import { format, addYears } from "date-fns";
 import { es } from "date-fns/locale";
 
@@ -31,7 +31,22 @@ interface Props {
 export const VoucherCard = forwardRef<HTMLDivElement, Props>(
   ({ data }, ref) => {
     const expiracion = addYears(data.fecha, 1);
-    const isDark = data.background === "noir" || data.background === "ocean";
+    const [isSiteDark, setIsSiteDark] = useState(false);
+    useEffect(() => {
+      const check = () =>
+        setIsSiteDark(document.documentElement.classList.contains("dark"));
+      check();
+      const observer = new MutationObserver(check);
+      observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ["class"],
+      });
+      return () => observer.disconnect();
+    }, []);
+    const isDark =
+      isSiteDark ||
+      data.background === "noir" ||
+      data.background === "ocean";
     const textColor = isDark ? "oklch(0.98 0.01 80)" : "oklch(0.2 0.02 30)";
     const subColor = isDark ? "oklch(0.85 0.02 60)" : "oklch(0.35 0.03 30)";
     const motivo = MOTIVOS[data.motivo];
