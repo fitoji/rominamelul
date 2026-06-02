@@ -62,7 +62,7 @@ const BACKGROUNDS = [
   { id: "manteca", label: "Manteca" },
   { id: "blanco", label: "Blanco" },
   { id: "cielo", label: "Cielo" },
-  { id: "coral", label: "Coral" },
+  { id: "arena", label: "Arena" },
 ];
 
 interface FormValues {
