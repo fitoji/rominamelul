@@ -95,7 +95,7 @@ export const VoucherCard = forwardRef<HTMLDivElement, Props>(
             <span className="font-display">masaje</span> con Romina.
           </p>
           {data.mensaje && (
-            <p className="text-xs italic" style={{ color: subColor }}>
+            <p className="text-base italic" style={{ color: subColor }}>
               &ldquo;{data.mensaje}&rdquo;
             </p>
           )}
