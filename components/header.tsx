@@ -26,6 +26,7 @@ import {
 } from "@/components/ui/collapsible";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { ModeToggle } from "@/components/theme-toggle";
 import Image from "next/image";
 import { navLinks, NavItem } from "@/lib/nav-links2";
 
@@ -346,6 +347,8 @@ export function Header() {
 
             <Separator orientation="vertical" className="mx-2 h-5" />
 
+            <ModeToggle />
+
             {/* CTA */}
             <Button
               asChild
@@ -456,6 +459,9 @@ export function Header() {
 
                 {/* Sheet footer CTA */}
                 <div className="border-t bg-background p-4">
+                  <div className="mb-3 flex justify-center">
+                    <ModeToggle />
+                  </div>
                   <SheetClose asChild>
                     <Button
                       asChild
