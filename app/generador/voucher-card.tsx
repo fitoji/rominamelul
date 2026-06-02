@@ -64,6 +64,15 @@ export const VoucherCard = forwardRef<HTMLDivElement, Props>(
           }}
         />
 
+        <Image
+          src="/images/cartoon-massage.svg"
+          alt=""
+          width={130}
+          height={101}
+          aria-hidden="true"
+          className="absolute bottom-3 right-3 opacity-60 pointer-events-none select-none"
+        />
+
         <div className="relative text-center">
           <p
             className="text-xs tracking-[0.4em] uppercase mb-4"
@@ -90,7 +99,7 @@ export const VoucherCard = forwardRef<HTMLDivElement, Props>(
               background: isDark ? "rgba(255,255,255,0.3)" : "rgba(0,0,0,0.2)",
             }}
           />
-          <p className="text-base leading-relaxed px-2">
+          <p className="text-xl leading-relaxed px-2">
             {data.tipo === "uno" ? "Quiero" : "Queremos"} regalarte un{" "}
             <span className="font-display">masaje</span> con Romina.
           </p>
