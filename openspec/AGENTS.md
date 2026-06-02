@@ -1,0 +1,97 @@
+# Project Conventions — b_TTzk1b8KwYH (romina-web)
+
+> Subagents: read this file **before** touching `app/`, `components/`, `lib/`, `hooks/`, or `public/`. It captures the conventions that are not obvious from `package.json` / `tsconfig.json` alone.
+
+## 1. Stack guardrails
+
+- **Next.js 16 App Router.** `app/` is the routing root. `pages/` does not exist. Use Server Components by default; add `"use client"` at the top of a file only when you need state, effects, or browser APIs.
+- **React 19.** `use()` for promises, `useFormStatus` / `useActionState` for pending UI, no legacy `forwardRef` in new code. React Compiler is enabled — do not manually wrap with `useMemo` / `useCallback` unless a profiler proves it.
+- **TypeScript 5.7 strict.** No `any` in new code. Prefer `unknown` + narrow. Use `import type` for type-only imports.
+- **Tailwind CSS v4 with `@theme inline`.** Theme tokens live in `app/globals.css` under the `@theme inline { … }` block — **do not** create a `tailwind.config.ts`. Use the CSS variables (`bg-background`, `text-foreground`, `font-sans`, `font-serif`, etc.).
+- **shadcn/ui (new-york style, neutral base).** Primitives in `components/ui/`. Add new primitives with the `shadcn` skill (project-scoped). Do not hand-roll a primitive if one exists in the registry.
+- **Forms: React Hook Form + Zod.** Always define a Zod schema first, infer the form types with `z.infer<typeof schema>`, and use `@hookform/resolvers/zod` to wire it. No `yup` / no manual `useState` form state.
+- **Icons: `lucide-react`** only. No emojis, no `react-icons`.
+
+## 2. File & folder rules
+
+- **Routes** → `app/`. One folder per route segment; `page.tsx` for the page, `layout.tsx` only when a segment needs its own chrome.
+- **Section components** → `components/<name>.tsx` (lowercase, kebab-case). Hero, About, Services, Header, Footer, etc.
+- **Primitives** → `components/ui/<name>.tsx` (added via `shadcn add`).
+- **Pure utilities** → `lib/<name>.ts`. `lib/utils.ts` exports `cn()` (clsx + tailwind-merge) — do not duplicate it.
+- **Custom hooks** → `hooks/use-<name>.ts`.
+- **Static assets** → `public/`. Reference as `/images/foo.webp`, not relative paths.
+- **No barrel files** in `components/`. Import from the specific file.
+- **`@/*` alias** maps to repo root (`tsconfig.json` paths). Use it instead of long relative paths.
+
+## 3. Styling rules
+
+- Tailwind utilities first. Inline `style={}` only for truly dynamic values (CSS variables from props, transforms that come from state).
+- Responsive: mobile-first. Default classes = mobile, then `md:`, `lg:`.
+- Colors come from CSS variables (`bg-background`, `text-foreground`, `bg-primary`, etc.). Never hardcode `bg-[#…]`.
+- Animations: prefer `tw-animate-css` classes or `framer-motion` (not installed yet — add deliberately if needed). For simple transitions, Tailwind's `transition-*` is enough.
+- **No `h-100` typo** (this is a real bug that already happened in `components/about.tsx` and is being fixed in `performance-quick-wins`). Tailwind only goes up to `h-full`, `h-screen`, `h-fit`, `h-min`, `h-max`, plus arbitrary `[100px]`.
+
+## 4. Fonts (do not break)
+
+- `app/layout.tsx` loads **Nunito** (`--font-sans`) and **Lora** (`--font-serif`) from `next/font/google`.
+- `app/globals.css` exposes them via `@theme inline { --font-sans: 'Nunito', …; --font-serif: 'Lora', …; }`.
+- If you change fonts, update both files in the same commit and visually verify there is no FOUT shift on `/`.
+
+## 5. Images
+
+- Use `next/image`. Always set `alt`. Always set `sizes` when `width`/`height` is omitted or when `fill` is used. Without `sizes`, browsers download the largest variant.
+- `images.unoptimized: true` is set globally — `next/image` will NOT optimize at runtime. It still gives you lazy loading, the `sizes` hint, and CLS protection.
+- Decorative icons (small WhatsApp/phone/mail icons) should use `loading="lazy"` and explicit `width`/`height`.
+
+## 6. Forms & validation
+
+- Define a Zod schema in the same file as the form (or in a `lib/schemas/<name>.ts` if reused).
+- Inferred type: `type FormValues = z.infer<typeof schema>`.
+- Wire with `zodResolver(schema)` on `useForm<FormValues>()`.
+- Use shadcn `Form`, `FormField`, `FormItem`, `FormLabel`, `FormControl`, `FormMessage` — not raw `<input>`s.
+
+## 7. SEO & metadata
+
+- `app/layout.tsx` already exports `metadata` for the site. Per-route `metadata` or `generateMetadata` for route-specific titles.
+- `lib/seo.ts` centralizes structured data + SEO helpers. Add new schemas there.
+- `app/sitemap.ts` and `app/robots.ts` exist — keep them in sync when routes change.
+
+## 8. i18n / copy
+
+- All user-facing copy is **Spanish (es)**. English in code comments and identifiers.
+- Do not introduce an i18n library for this project — the landing is single-language by design.
+
+## 9. Commits & PRs
+
+- **Conventional Commits**: `feat:`, `fix:`, `chore:`, `perf:`, `refactor:`, `docs:`, `style:`, `test:`. Scope optional (`fix(about): …`).
+- No AI co-author trailer. No "Generated by…" lines.
+- One commit per logical change. Use the `work-unit-commits` skill before splitting large work.
+- Branch → PR flow: see the `branch-pr` skill. PRs over ~400 lines should consider `chained-pr`.
+
+## 10. Testing & verification (current reality)
+
+- **There is no test runner.** `pnpm test` does not exist.
+- Before any `sdd-verify` step, you MUST at minimum:
+  1. `npx tsc --noEmit` — `next.config.mjs` ignores build errors, so this is your real type check.
+  2. `pnpm lint` — ESLint (Next 16 flat config default).
+  3. `pnpm build` — production build.
+  4. Manual smoke: open `/` and the changed routes in a browser; check console for errors.
+- Performance changes: also run `npx lighthouse http://localhost:3000 --only-categories=performance` for before/after.
+
+## 11. OpenSpec workflow (this project)
+
+- Specs source of truth: `openspec/specs/<domain>/spec.md`.
+- Active changes: `openspec/changes/<change-name>/{proposal.md, design.md, tasks.md, specs/<domain>/spec.md}`.
+- When a change is verified, `sdd-archive` moves it to `openspec/changes/archive/YYYY-MM-DD-<change-name>/` and merges deltas into main specs.
+- Do **not** write to the legacy `sdd/` directory at the repo root — that is pre-convention. Use `openspec/`.
+- Read `openspec/init.md` first; read `openspec/config.yaml` for `rules` and quality commands.
+
+## 12. What NOT to do
+
+- Do not add `pages/` (App Router only).
+- Do not add `tailwind.config.ts` (Tailwind v4 with `@theme inline` only).
+- Do not add `forwardRef` (React 19, refs are regular props).
+- Do not use `any`; do not use `@ts-ignore`; do not silence ESLint without a `// eslint-disable-next-line` plus a one-line reason.
+- Do not add a test runner as a side effect of an unrelated change — propose it as its own SDD change so the team can review the choice (Vitest + Testing Library is the default recommendation for this stack).
+- Do not introduce a state management library (Redux, Zustand) — this is a static landing page; `useState` and URL state are enough.
+- Do not introduce a backend, a database, or auth flows — out of scope for a marketing site.

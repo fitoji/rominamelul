@@ -1,24 +1,53 @@
-strict_tdd: false
+schema: spec-driven
+
 context: |
-  romina-web is a Node.js/TypeScript, React, Next.js 16.2.4 project with React 19 and Tailwind CSS v4.
-  Package manager: pnpm.
-  No test runner was detected; strict TDD is disabled until a testing framework is added.
-  Stack: Next.js, React 19, TypeScript 5.7.3, Tailwind CSS 4.2.0, shadcn/ui (Radix primitives), Zod 3.24.1, React Hook Form 7.54.1, Lucide icons.
+  Project: romina-web (project key: b_TTzk1b8KwYH) — Next.js 16.2.6 landing page for Romina Melul (es).
+  Stack: Next.js 16 App Router, React 19.2.6, TypeScript 5.7.3, Tailwind CSS v4.2.0, shadcn/ui (new-york / neutral, RSC), Zod 3.24.1, React Hook Form 7.54.1, Lucide icons, @vercel/analytics, next-themes, html-to-image, embla-carousel-react, sonner, recharts, date-fns, vaul, cmdk, react-day-picker, react-resizable-panels, input-otp.
+  Architecture: single Next.js app (App Router) — app/ for routes, components/ for sections + components/ui/ for shadcn primitives, lib/ for utils/SEO/nav, hooks/ for custom hooks, public/ for static assets, styles in app/globals.css using @theme inline. @/* alias maps to repo root. React Compiler enabled; next.config.mjs has `ignoreBuildErrors: true` and `images.unoptimized: true`.
+  Package manager: pnpm (pnpm-lock.yaml present; pnpm-workspace.yaml exists but no declared workspaces — treat as single app).
+  Lint: ESLint via `pnpm lint` (Next.js default flat config).
+  Typecheck: `npx tsc --noEmit` (strict mode on).
+  Format: not configured (no Prettier/format script).
+  CI: none detected (no .github/ directory).
+  Testing: NO test runner configured (no vitest, jest, playwright, cypress, testing-library). `strict_tdd: false` — TDD cannot be enforced until a runner is added.
+  UI language: Spanish (es). Conventional commits for messages. Atomic-design-ish layout (sections in components/, primitives in components/ui/).
+  OpenSpec state: initialized 2026-05-19; one completed change (landing-page-romina → archived 2026-05-19), one active change (performance-quick-wins). Main spec at openspec/specs/landing-page-romina/spec.md.
+
+strict_tdd: false
+
 rules:
   proposal:
     require_problem_statement: true
+    require_risks: true
+    require_rollback_plan: true
   spec:
     require_acceptance_criteria: true
+    require_scenarios: true
+    use_given_when_then: true
+    use_rfc2119_keywords: true
   design:
     require_tradeoffs: true
+    require_sequence_diagrams: true
   tasks:
     protect_review_workload: true
+    group_by_phase: true
+    hierarchical_numbering: true
   apply:
+    follow_existing_patterns: true
+    tdd: false
     test_command: ""
   verify:
     test_command: ""
+    build_command: "pnpm build"
+    typecheck_command: "npx tsc --noEmit"
+    lint_command: "pnpm lint"
+    coverage_threshold: 0
+  archive:
+    warn_before_destructive_deltas: true
+    require_verification_pass: true
+
 testing:
-  detected: "2026-05-19"
+  detected: "2026-06-02"
   runner:
     command: ""
     framework: ""
@@ -33,11 +62,13 @@ testing:
   coverage:
     command: ""
     commands: []
+  notes: "No test runner installed. Verify changes manually via `pnpm build` + visual inspection / Lighthouse."
+
 quality:
-  lint: "pnpm run lint"
+  lint: "pnpm lint"
   lint_commands:
     - scope: "."
-      command: "pnpm run lint"
+      command: "pnpm lint"
       framework: "eslint"
   typecheck: "npx tsc --noEmit"
   typecheck_commands:
@@ -46,3 +77,9 @@ quality:
       framework: "typescript"
   format: ""
   format_commands: []
+
+# Project key used to namespace OpenSpec artifacts and (when used) Engram observations.
+project: b_TTzk1b8KwYH
+
+# Init report location — later SDD phases should read openspec/init.md before launching.
+init_report: openspec/init.md
