@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -7,7 +7,12 @@ import { ArrowLeft, CalendarIcon, Download, Sparkles } from "lucide-react";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
 import Link from "next/link";
-import { VoucherCard, type VoucherData, type Motivo, type Tipo } from "./voucher-card";
+import {
+  VoucherCard,
+  type VoucherData,
+  type Motivo,
+  type Tipo,
+} from "./voucher-card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -54,7 +59,7 @@ const BACKGROUNDS = [
   { id: "gold", label: "Dorado" },
   { id: "lavender", label: "Lavanda" },
   { id: "ocean", label: "Océano" },
-  { id: "noir", label: "Noir" },
+  { id: "manteca", label: "Manteca" },
 ];
 
 interface FormValues {
@@ -155,7 +160,10 @@ export default function GeneradorTargetas() {
                       <FormItem>
                         <FormLabel>Destinatario</FormLabel>
                         <FormControl>
-                          <Input placeholder="Para quién es el regalo" {...field} />
+                          <Input
+                            placeholder="Para quién es el regalo"
+                            {...field}
+                          />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -226,7 +234,9 @@ export default function GeneradorTargetas() {
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem value="uno">Solo una persona</SelectItem>
+                            <SelectItem value="uno">
+                              Solo una persona
+                            </SelectItem>
                             <SelectItem value="varios">Somos varios</SelectItem>
                           </SelectContent>
                         </Select>
