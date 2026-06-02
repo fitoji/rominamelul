@@ -1,7 +1,7 @@
-import { Download } from 'lucide-react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { Button } from '@/components/ui/button'
+import { Download } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export function AboutMe() {
   return (
@@ -63,7 +63,7 @@ export function AboutMe() {
                   escucha sensible, respetuosa y transformadora.
                 </p>
                 <p>
-                  En 2011 cofundé{' '}
+                  En 2011 cofundé{" "}
                   <span className="text-foreground font-medium">
                     Espacio Satsanga
                   </span>
@@ -79,10 +79,10 @@ export function AboutMe() {
                   clases y encuentros virtuales.
                 </p>
                 <p>
-                  Actualmente trabajo en Barcelona y la Costa Brava, ofreciendo
-                  principalmente masajes y terapias a domicilio, creando
-                  experiencias de bienestar personalizadas en la comodidad del
-                  hogar.
+                  Actualmente trabajo en Barcelona (consultorio en Eixample) y
+                  la Costa Brava, ofreciendo principalmente masajes y terapias a
+                  domicilio, creando experiencias de bienestar personalizadas en
+                  la comodidad del hogar.
                 </p>
               </div>
 
@@ -93,7 +93,11 @@ export function AboutMe() {
                   variant="outline"
                   className="border-primary/30 text-primary hover:bg-primary/10"
                 >
-                  <Link href="/CV_ROMINAMELUL.pdf" download aria-label="Descargar CV de Romina Melul (PDF)">
+                  <Link
+                    href="/CV_ROMINAMELUL.pdf"
+                    download
+                    aria-label="Descargar CV de Romina Melul (PDF)"
+                  >
                     <Download className="mr-2 h-4 w-4" aria-hidden="true" />
                     Descargar CV
                   </Link>
@@ -141,5 +145,5 @@ export function AboutMe() {
         </div>
       </div>
     </section>
-  )
+  );
 }

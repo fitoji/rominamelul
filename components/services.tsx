@@ -57,17 +57,7 @@ El trabajo es siempre en todo el cuerpo y me gusta decir que es una reorganizaci
       modality: "Sesión Grupal",
       icon: Users,
       image: "/images/therapy-2.jpg",
-      fullDescription: `El Movimiento Vital Expresivo es una práctica que invita a reconectarte con tu cuerpo de manera profunda y transformadora.
-
-A través de la música, secuencias de movimiento, expresiones corporales y respiraciones conscientes, este trabajo facilita:
-
-• El encuentro contigo mismo: explorando sensaciones, emociones y patrones corporales.
-• La expresión auténtica: permitiendo que el cuerpo habla sin filtros ni juicios.
-• La conexión con el otro: en un espacio grupal donde la presencia y la escucha son fundamentales.
-• La liberación emocional: moviendo lo que está guardado en el cuerpo.
-• El fortalecimiento del vínculo cuerpo-mente: integrando movimiento y conciencia.
-
-Es un espacio de exploración personal donde cada persona encuentra su propio ritmo y camino hacia el bienestar.`,
+      fullDescription: `El hilo conductor de las distintas técnicas utilizadas en la terapia es el "Trabajo sobre Sí". Es un espacio de charla que nos permite poner palabra al lenguaje del cuerpo y al proceso de conexión con nuestras emociones y nuestra conducta.  Nos permite ese espacio de claridad en el paso a paso de nuestro auto-conocimiento y la auto-transformación valorando estos últimos como poder sanador del ser humano. Aceptar que el dolor y los síntomas es la forma en que nuestra inteligencia usa para que nos escuchemos, nos respetemos y actuemos de acuerdo a nuestro sentir. Entendiendo “el sentir” como una inteligencia sensible que ya incorporó la razón.`,
     },
   ];
 
@@ -91,11 +81,11 @@ En sí misma tiene una gran y variada propuesta en cuanto a terapéutica siguien
       icon: Sparkles,
       image: "/q2-yoga.png",
       heroImage: "/images/romi-yoga02.webp",
-      fullDescription: `He comprobado en mi experiencia personal y en la experiencia clínica en el consultorio que la práctica de Hatha Yoga junto con el massage mantienen el cuerpo-mente flexible, fuerte, elástico y adaptable al cambio. Este trabajo en conjunto potencia nuestra capacidad de manejar niveles de estrés con un estado vital, alegre y armónico.
+      fullDescription: `He comprobado en mi experiencia personal y en la experiencia clínica en el consultorio que la práctica de Hatha Yoga junto con el masaje mantienen el cuerpo-mente flexible, fuerte, elástico y adaptable al cambio. Este trabajo en conjunto potencia nuestra capacidad de manejar niveles de estrés con un estado vital, alegre y armónico.
 
 A su vez podemos comprobar con mayor rapidez cómo se corrigen posturas, se desarman vicios posturales y se concientiza la respiración.
 
-También por sí sola, la práctica de Hatha Yoga es un gran aliado en la vida, que sumada al trabajo consciente con la TPI, resultan un dúoo muy provechoso.`,
+También por sí sola, la práctica de Hatha Yoga es un gran aliado en la vida, que sumada al trabajo consciente con la TPI, resultan un dúo muy provechoso.`,
     },
     {
       title: "Flores de Bach",
@@ -126,7 +116,8 @@ Resultan muy efectivas tanto para las personas como para los mascotas.`,
       icon: Sparkles,
       image: "/q1-emba.png",
       heroImage: "/images/emba-mobile.webp",
-      fullDescription: `Trabajo especializado para embarazadas`,
+      fullDescription: `Esta terapia es especialmente recomendada para trabajar durante el embarazo,  el pre y post parto.  Con el masaje nos enfocamos en liberar tensión innecesaria, en abrir espacios cerrados por malas posturas o contracturas antiguas. Realizamos ejercicios de fortalecimiento muscular para prepararnos para el parto y trabajamos educando la respiración para  cada momento. Acompañando todo el proceso emocional/hormonal dejando que se establezca la armonía, la vitalidad y la alegría de vivir este momento tan especial.
+`,
     },
   ];
 

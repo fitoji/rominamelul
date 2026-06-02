@@ -71,7 +71,7 @@ export function Hero() {
                   acuerdo a tu condición en el momento presente. La sesión dura
                   alrededor de 2 horas y la frecuencia terapéutica la
                   estableceremos en conjunto. Realizo sesiones a domicilio y en
-                  consultorio.
+                  consultorio en Barcelona (Eixample).
                 </p>
               </div>
 
