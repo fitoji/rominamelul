@@ -342,7 +342,7 @@ export default function GeneradorTargetas() {
                       className="w-full"
                     >
                       <Download className="w-4 h-4 mr-2" />
-                      {downloading ? "..." : "JPG"}
+                      {downloading ? "..." : "Descargar Vale"}
                     </Button>
                   </div>
                 </div>

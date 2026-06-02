@@ -104,7 +104,7 @@
     --bg-arena: linear-gradient(
         135deg,
         oklch(0.93 0.04 70) 0%,
-        oklch(0.83 0.06 65) 100%
+        oklch(0.93 0.02 60) 100%
     );
 }
 
