@@ -28,7 +28,7 @@ const steps = [
   {
     icon: Calendar,
     title: "3. Sobre la fecha",
-    description: "Tendrás un vale poder usarlo dentro de un año.",
+    description: "Tendrás un vale para poder usarlo dentro de un año.",
   },
   {
     icon: MapPin,
