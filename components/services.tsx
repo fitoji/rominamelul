@@ -14,14 +14,13 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Heart, Sparkles, User, Users } from "lucide-react";
+import { Heart, Sparkles, Users } from "lucide-react";
 import Image from "next/image";
 
 type ServiceDetail = {
   title: string;
   description: string;
   modality: string;
-  icon: typeof User;
   image: string;
   fullDescription: string;
 };
@@ -33,7 +32,6 @@ export function Services() {
       description:
         "Ayuda a movilizar y flexibilizar trabas corporales que aprisionan y debilitan. Libera la energía retenida y recupera la fuerza y alegría de vivir.",
       modality: "Sesión Individual",
-      icon: User,
       image: "/images/romi-masajes.webp",
       fullDescription: `Moviliza trayendo a la superficie trabas corporales que aprisionan y debilitan.
 Libera la energía vital retenida recuperando la fuerza y la alegría de vivir.
@@ -55,7 +53,6 @@ El trabajo es siempre en todo el cuerpo y me gusta decir que es una reorganizaci
       description:
         "El hilo conductor de las distintas técnicas utilizadas en la terapia es el Trabajo sobre Sí, que reconoce el auto-conocimiento y la auto-transformación como poder sanador del ser humano.",
       modality: "Sesión de Charla",
-      icon: Heart,
       image: "/images/therapy-2.jpg",
       fullDescription: `El hilo conductor de las distintas técnicas utilizadas en la terapia es el "Trabajo sobre Sí". Es un espacio de charla que nos permite poner palabra al lenguaje del cuerpo y al proceso de conexión con nuestras emociones y nuestra conducta.  Nos permite ese espacio de claridad en el paso a paso de nuestro auto-conocimiento y la auto-transformación valorando estos últimos como poder sanador del ser humano. Aceptar que el dolor y los síntomas es la forma en que nuestra inteligencia usa para que nos escuchemos, nos respetemos y actuemos de acuerdo a nuestro sentir. Entendiendo “el sentir” como una inteligencia sensible que ya incorporó la razón.`,
     },
