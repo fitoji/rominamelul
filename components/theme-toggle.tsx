@@ -10,6 +10,7 @@ export function ModeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- canonical next-themes mounted gate to defer hydration
     setMounted(true);
   }, []);
 
