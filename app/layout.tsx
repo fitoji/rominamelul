@@ -1,4 +1,5 @@
 import { TooltipProvider } from '@/components/ui/tooltip'
+import { ThemeProvider } from '@/components/theme-provider'
 import {
   ogImage,
   organizationStructuredData,
@@ -7,9 +8,15 @@ import {
   siteUrl,
 } from '@/lib/seo'
 import { Analytics } from '@vercel/analytics/next'
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Lora, Nunito } from 'next/font/google'
 import './globals.css'
+
+// Inline script that runs before first paint to apply the persisted theme
+// to <html> and avoid a flash of the wrong colors. Wrapped in try/catch so
+// private-mode / sandboxed contexts (where localStorage throws) silently
+// fall back to the light default. Mirrors `defaultTheme="light"`.
+const NO_FOUC_SCRIPT = `(function(){try{var t=localStorage.getItem('theme');if(!t){t='light'}var d=t==='dark';document.documentElement.classList[d?'add':'remove']('dark');document.documentElement.style.colorScheme=t}catch(e){}})()`
 
 const lora = Lora({
   subsets: ['latin'],
@@ -87,13 +94,24 @@ export const metadata: Metadata = {
   },
 }
 
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#0a0a0a' },
+  ],
+  colorScheme: 'light dark',
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es" className="bg-background">
+    <html lang="es" className="bg-background" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: NO_FOUC_SCRIPT }} />
+      </head>
       <body
         className={`${lora.variable} ${nunito.variable} font-sans antialiased`}
       >
@@ -104,7 +122,16 @@ export default function RootLayout({
         >
           Saltar al contenido principal
         </a>
-        <TooltipProvider>{children}</TooltipProvider>
+        <TooltipProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="light"
+            enableSystem={false}
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+        </TooltipProvider>
 
         <script
           type="application/ld+json"
