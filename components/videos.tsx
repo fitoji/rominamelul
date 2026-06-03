@@ -9,16 +9,17 @@ type Playlist = {
   title: string
   description: string
   playlistId: string
+  videoId: string
 }
 
 function YouTubeFacade({ playlist }: { playlist: Playlist }) {
   const [isLoaded, setIsLoaded] = useState(false)
-  const thumbnailUrl = `https://img.youtube.com/vi/${playlist.playlistId}/maxresdefault.jpg`
+  const thumbnailUrl = `https://i.ytimg.com/vi/${playlist.videoId}/maxresdefault.jpg`
 
   if (isLoaded) {
     return (
       <iframe
-        src={`https://www.youtube.com/embed?listType=playlist&list=${playlist.playlistId}&rel=0`}
+        src={`https://www.youtube-nocookie.com/embed?listType=playlist&list=${playlist.playlistId}&rel=0`}
         title={`Videos de ${playlist.title} - Playlist de Romina Melul`}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen
@@ -56,11 +57,13 @@ export function Videos() {
       title: "Yoga",
       description: "Prácticas de Hatha Yoga para el equilibrio físico, mental y energético.",
       playlistId: "PL8V1b3Mh65VCygZhuj_k3HTMsZPHJr9U_",
+      videoId: "jvzbnPYzDSc",
     },
     {
       title: "Lectura Corporal",
       description: "Explorando la conexión entre el cuerpo y las emociones.",
       playlistId: "PL8V1b3Mh65VCwumdIPY6U2cgvoA-s6Gh0",
+      videoId: "lvEc_vDpubs",
     },
   ]
 

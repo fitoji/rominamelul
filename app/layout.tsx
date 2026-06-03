@@ -113,6 +113,8 @@ export default function RootLayout({
     <html lang="es" className="bg-background" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: NO_FOUC_SCRIPT }} />
+        <link rel="preconnect" href="https://www.youtube-nocookie.com" />
+        <link rel="preconnect" href="https://i.ytimg.com" />
       </head>
       <body
         className={`${lora.variable} ${nunito.variable} font-sans antialiased`}
