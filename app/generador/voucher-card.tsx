@@ -82,14 +82,22 @@ export function VoucherCard({ data, ref }: Props) {
 
         <div className="relative text-center space-y-4">
           {data.showCartoon !== false && (
-            <div className="absolute inset-0 flex items-center justify-end pointer-events-none select-none overflow-hidden">
+            <div
+              className="absolute bottom-0 right-0 w-56 h-44 pointer-events-none select-none -z-10"
+              aria-hidden="true"
+              style={{
+                maskImage:
+                  "radial-gradient(ellipse 70% 60% at 70% 80%, black 30%, transparent 72%)",
+                WebkitMaskImage:
+                  "radial-gradient(ellipse 70% 60% at 70% 80%, black 30%, transparent 72%)",
+              }}
+            >
               <Image
                 src="/images/cartoon-massage.svg"
                 alt=""
-                width={160}
-                height={124}
-                aria-hidden="true"
-                className="opacity-[0.12] mr-2"
+                width={280}
+                height={217}
+                className="absolute -bottom-6 -right-6 opacity-[0.14] object-contain"
               />
             </div>
           )}
