@@ -65,17 +65,6 @@ export function VoucherCard({ data, ref }: Props) {
           }}
         />
 
-        {data.showCartoon !== false && (
-          <Image
-            src="/images/cartoon-massage.svg"
-            alt=""
-            width={130}
-            height={101}
-            aria-hidden="true"
-            className="absolute top-3 right-3 opacity-60 pointer-events-none select-none"
-          />
-        )}
-
         <div className="relative text-center">
           <p
             className="text-xs tracking-[0.4em] uppercase mb-4"
@@ -92,6 +81,18 @@ export function VoucherCard({ data, ref }: Props) {
         </div>
 
         <div className="relative text-center space-y-4">
+          {data.showCartoon !== false && (
+            <div className="absolute inset-0 flex items-center justify-end pointer-events-none select-none overflow-hidden">
+              <Image
+                src="/images/cartoon-massage.svg"
+                alt=""
+                width={160}
+                height={124}
+                aria-hidden="true"
+                className="opacity-[0.12] mr-2"
+              />
+            </div>
+          )}
           <p className="text-sm" style={{ color: subColor }}>
             De parte de
           </p>
