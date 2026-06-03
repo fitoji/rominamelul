@@ -28,9 +28,9 @@ export function ModeToggle() {
       className="rounded-xl"
     >
       {isDark ? (
-        <Sun aria-hidden suppressHydrationWarning />
+        <Sun className="text-accent" aria-hidden suppressHydrationWarning />
       ) : (
-        <Moon aria-hidden suppressHydrationWarning />
+        <Moon className="text-primary" aria-hidden suppressHydrationWarning />
       )}
     </Button>
   );
