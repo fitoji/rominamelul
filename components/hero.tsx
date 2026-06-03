@@ -30,8 +30,8 @@ export function Hero() {
                 alt=""
                 width={450}
                 height={450}
-                className="max-w-[min(100%,28rem)] h-auto w-auto object-contain"
-                priority
+                className="max-w-[min(100%,28rem)] object-contain size-[28rem]"
+                loading="eager"
               />
             </div>
 
@@ -116,7 +116,7 @@ export function Hero() {
                 width={450}
                 height={450}
                 className="relative"
-                style={{ width: "auto", height: "auto" }}
+                loading="eager"
                 priority
               />
             </div>

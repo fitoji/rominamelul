@@ -2,10 +2,6 @@ allowBuilds:
   sharp: true
   unrs-resolver: true
 
-# Supply-chain hardening: narrow the window for malware attacks.
-#   minimumReleaseAge (7 days = 10080 min) — refuse freshly published
-#     versions so malware caught and unpublished within hours never lands.
-#   trustPolicy: no-downgrade — reject packages whose provenance/
-#     signature trust weakens between lockfile resolutions.
-minimumReleaseAge: 10080
+# Supply-chain hardening: reject packages whose provenance/signature
+# trust weakens between lockfile resolutions.
 trustPolicy: no-downgrade
