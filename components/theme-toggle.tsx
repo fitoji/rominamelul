@@ -1,18 +1,17 @@
 "use client";
 
 import { Moon, Sun } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 
 export function ModeToggle() {
-  const [mounted, setMounted] = useState(false);
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
   const { resolvedTheme, setTheme } = useTheme();
-
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- canonical next-themes mounted gate to defer hydration
-    setMounted(true);
-  }, []);
 
   // resolvedTheme is `undefined` until mount (next-themes defers hydration);
   // gate on `mounted` so SSR and first client render produce identical HTML.

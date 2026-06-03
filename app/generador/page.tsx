@@ -97,8 +97,8 @@ export default function GeneradorTargetas() {
   const preview: VoucherData = {
     destinatario: values.destinatario || "Nombre del destinatario",
     origen: values.origen || "Tu nombre",
-    motivo: values.motivo,
-    tipo: values.tipo,
+    motivo: values.motivo ?? "cumpleaños",
+    tipo: values.tipo ?? "uno",
     mensaje: values.mensaje || undefined,
     fecha: values.fecha ?? new Date(),
     background,

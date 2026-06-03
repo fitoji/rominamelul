@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { forwardRef, useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import { format, addYears } from "date-fns";
 import { es } from "date-fns/locale";
 
@@ -27,24 +27,24 @@ export interface VoucherData {
 
 interface Props {
   data: VoucherData;
+  ref?: React.Ref<HTMLDivElement>;
 }
 
-export const VoucherCard = forwardRef<HTMLDivElement, Props>(
-  ({ data }, ref) => {
-    const expiracion = addYears(data.fecha, 1);
-    const [isSiteDark, setIsSiteDark] = useState(false);
-    useEffect(() => {
-      const check = () =>
-        setIsSiteDark(document.documentElement.classList.contains("dark"));
-      check();
-      const observer = new MutationObserver(check);
+export function VoucherCard({ data, ref }: Props) {
+  const expiracion = addYears(data.fecha, 1);
+  const isSiteDark = useSyncExternalStore(
+    (onStoreChange) => {
+      const observer = new MutationObserver(onStoreChange);
       observer.observe(document.documentElement, {
         attributes: true,
         attributeFilter: ["class"],
       });
       return () => observer.disconnect();
-    }, []);
-    const isDark =
+    },
+    () => document.documentElement.classList.contains("dark"),
+    () => false,
+  );
+  const isDark =
       (isSiteDark && data.background !== "blanco") ||
       data.background === "noir" ||
       data.background === "ocean";
@@ -143,7 +143,4 @@ export const VoucherCard = forwardRef<HTMLDivElement, Props>(
         </div>
       </div>
     );
-  },
-);
-
-VoucherCard.displayName = "VoucherCard";
+  }
