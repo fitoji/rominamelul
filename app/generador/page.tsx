@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, useWatch } from "react-hook-form";
 import { toJpeg } from "html-to-image";
 import { ArrowLeft, CalendarIcon, Download, Sparkles } from "lucide-react";
 import { format } from "date-fns";
@@ -93,7 +93,7 @@ export default function GeneradorTargetas() {
     },
   });
 
-  const values = form.watch();
+  const values = useWatch({ control: form.control });
   const preview: VoucherData = {
     destinatario: values.destinatario || "Nombre del destinatario",
     origen: values.origen || "Tu nombre",

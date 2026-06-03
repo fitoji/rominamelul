@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -154,18 +154,24 @@ function MobileSection({
   sheetOpen: boolean;
   activeId: string;
 }) {
-  const [open, setOpen] = useState(false);
   const hasActiveChild = item.children?.some((child) =>
     isSectionActive(child.href, activeId),
   );
+  const [open, setOpen] = useState(hasActiveChild);
+  const prevSheetOpen = useRef(sheetOpen);
 
-  useEffect(() => {
+  // Sync Collapsible state during render when external triggers change,
+  // avoiding cascading renders from effects.
+  if (prevSheetOpen.current !== sheetOpen) {
+    prevSheetOpen.current = sheetOpen;
     if (!sheetOpen) setOpen(false);
-  }, [sheetOpen]);
+  }
 
-  useEffect(() => {
+  const prevHasActiveChild = useRef(hasActiveChild);
+  if (prevHasActiveChild.current !== hasActiveChild) {
+    prevHasActiveChild.current = hasActiveChild;
     if (hasActiveChild) setOpen(true);
-  }, [hasActiveChild]);
+  }
 
   return (
     <Collapsible open={open} onOpenChange={setOpen}>
