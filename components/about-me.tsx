@@ -24,16 +24,16 @@ export function AboutMe() {
 
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             {/* Image - Columna más estrecha */}
-            <div className="lg:col-span-4 order-1 lg:order-1 relative">
+            <div className="lg:col-span-4 order-1 lg:order-1 relative group">
               {/* Background rotated element */}
-              <div className="absolute -inset-4 bg-primary/10 rounded-3xl transform -rotate-3" />
-              <div className="relative aspect-3/4 rounded-2xl overflow-hidden shadow-xl">
+              <div className="absolute -inset-4 bg-primary/10 rounded-3xl transform -rotate-3 transition-transform duration-700 group-hover:-rotate-2" />
+              <div className="relative aspect-3/4 rounded-2xl overflow-hidden shadow-xl transition-all duration-700 group-hover:shadow-[0_30px_80px_-20px_rgba(0,0,0,0.35)] group-hover:-translate-y-1">
                 <Image
                   src="/images/romi-perfi02-l26.webp"
                   alt="Romina Claudia Melul - Terapeuta Psicocorporal"
                   fill
                   sizes="(max-width: 1024px) 100vw, 33vw"
-                  className="object-cover"
+                  className="object-cover transition-transform duration-1200 ease-out group-hover:scale-105"
                 />
               </div>
             </div>

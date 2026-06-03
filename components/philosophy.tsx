@@ -75,16 +75,18 @@ export function Philosophy() {
           </div>
 
           {/* Image */}
-          <div className="relative">
-            <div className="absolute -inset-4 bg-accent/10 rounded-3xl transform rotate-3" />
-            <Image
-              src="/images/therapy-3.jpg"
-              alt="Filosofía de la Terapia Psicocorporal"
-              width={600}
-              height={500}
-              className="relative rounded-2xl shadow-xl object-cover"
-              style={{ width: 'auto', height: 'auto' }}
-            />
+          <div className="relative group">
+            <div className="absolute -inset-4 bg-accent/10 rounded-3xl transform rotate-3 transition-transform duration-700 group-hover:rotate-2" />
+            <div className="relative rounded-2xl overflow-hidden shadow-xl transition-all duration-700 group-hover:shadow-[0_30px_80px_-20px_rgba(0,0,0,0.35)] group-hover:-translate-y-1">
+              <Image
+                src="/images/therapy-3.jpg"
+                alt="Filosofía de la Terapia Psicocorporal"
+                width={600}
+                height={500}
+                className="object-cover transition-transform duration-1200 ease-out group-hover:scale-105"
+                style={{ width: 'auto', height: 'auto' }}
+              />
+            </div>
           </div>
         </div>
 
