@@ -15,8 +15,10 @@ import './globals.css'
 // Inline script that runs before first paint to apply the persisted theme
 // to <html> and avoid a flash of the wrong colors. Wrapped in try/catch so
 // private-mode / sandboxed contexts (where localStorage throws) silently
-// fall back to the light default. Mirrors `defaultTheme="light"`.
-const NO_FOUC_SCRIPT = `(function(){try{var t=localStorage.getItem('theme');if(!t){t='light'}var d=t==='dark';document.documentElement.classList[d?'add':'remove']('dark');document.documentElement.style.colorScheme=t}catch(e){}})()`
+// fall back to the light default.
+// On first visit (no saved theme), detects prefers-color-scheme and saves it
+// so the system preference is checked exactly ONCE.
+const NO_FOUC_SCRIPT = `(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';localStorage.setItem('theme',t)}var d=t==='dark';document.documentElement.classList[d?'add':'remove']('dark');document.documentElement.style.colorScheme=t}catch(e){}})()`
 
 const lora = Lora({
   subsets: ['latin'],
@@ -125,7 +127,6 @@ export default function RootLayout({
         <TooltipProvider>
           <ThemeProvider
             attribute="class"
-            defaultTheme="light"
             enableSystem={false}
             disableTransitionOnChange
           >
