@@ -83,7 +83,7 @@ export function VoucherCard({ data, ref }: Props) {
         <div className="relative text-center space-y-4">
           {data.showCartoon !== false && (
             <div
-              className="absolute bottom-0 right-0 w-56 h-44 pointer-events-none select-none -z-10"
+              className="absolute bottom-0 right-0 w-56 h-44 pointer-events-none select-none"
               aria-hidden="true"
               style={{
                 maskImage:
